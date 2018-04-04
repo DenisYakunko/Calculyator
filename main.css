@@ -1,0 +1,508 @@
+[v-cloak] {
+    display: none;
+}
+
+.body {
+    position: relative;
+    background: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #7d7d7d;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.site-body {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 80px 10px 85px 10px;
+}
+
+.title-box {
+    position: relative;
+    font-size: 30px;
+    font-weight: 800;
+    color: #282828;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+    line-height: 1.2;
+}
+
+.title-box:after {
+    display: block;
+    content: '';
+    width: 56px;
+    height: 4px;
+    background: #277ddd;
+    margin-top: 22px;
+}
+
+.inform-page {
+    margin-top: 45px;
+    padding-top: 0;
+    width: 1200px;
+    background: #e7eff6;
+    padding-bottom: 40px;
+}
+
+#first {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 0 40px 0 40px;
+}
+
+#first .left {
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    width: 500px;
+}
+
+.right {
+    position: relative;
+    width: 500px;
+}
+
+select {
+    font-size: 16px;
+    border: #59778c 1px solid;
+    padding: 10px;
+    height: 50px;
+}
+
+.input {
+    border: #59778c 1px solid;
+    padding: 15px;
+    background: white;
+    color: black;
+    font-size: 16px;
+}
+
+#first .input_1 {
+    border: #59778c 1px solid;
+    padding: 15px 15px 19px 15px;
+    background: white;
+    color: black;
+    font-size: 16px;
+}
+
+#first .input_1 input {
+    border: none;
+    border-bottom: #a3a3a3 1px solid;
+    height: 28px;
+    width: 100px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.errortext {
+    color: red;
+    padding: 5px;
+}
+
+.input .safe {
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #0d3959;
+}
+
+.input .safe input {
+    position: relative;
+    left: auto;
+}
+
+span .jd-radio {
+    display: none;
+}
+
+#second {
+    position: relative;
+    padding: 0 40px 0 40px;
+}
+
+.check input {
+    position: absolute;
+    left: -9999px;
+}
+
+.jq-checkbox {
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background: url("img/checkbox.png") no-repeat;
+    top: -2px;
+}
+
+.jq-checkbox:checked {
+    background-position: -25px 0;
+}
+
+.check p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0d3959;
+    margin: 0;
+}
+
+.check ul {
+    padding: 15px 0 0 25px;
+    text-align: justify;
+    list-style: circle;
+    color: black;
+}
+
+.check li {
+    padding-top: 10px;
+}
+
+#third {
+    position: relative;
+    padding: 0 40px 0 40px;
+}
+
+#third .select {
+    margin-top: 25px;
+}
+
+.calc {
+    margin-top: 25px;
+}
+
+#forth {
+    margin: 40px;
+    width: auto;
+    background: #f2f4f5;
+    border: #59778c 2px solid;
+}
+
+.options {
+    margin: 0 25px 0 25px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    color: #0d3959;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.source {
+    background: white;
+    border: #59778c 1px solid;
+    margin: 25px 25px 0 25px;
+    width: auto;
+}
+
+.source .in {
+    padding: 10px 10px 10px 30px;
+    background: #59778c;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.inner_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10px 15px 10px;
+}
+
+.inner_wrap .right {
+    width: 400px;
+}
+
+.inner_wrap p {
+    color: black;
+    padding-top: 15px;
+}
+
+p.sourse_bottom {
+    margin: 0 10px 10px 10px;
+    text-align: justify;
+}
+
+#forth p.sourse_bottom {
+    margin: 0 25px 25px 25px;
+}
+
+.source .in_2 {
+    padding: 10px 10px 10px 10px;
+    background: #59778c;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.in_2 input {
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+#fifth {
+    margin: 25px 40px 0 40px;
+    width: auto;
+}
+
+#fifth button {
+    width: 1120px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: none;
+}
+
+.result p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0d3959;
+}
+
+.total {
+    background: white url("/about/test/bg.svg") no-repeat;
+    background-position: right;
+    border: #59778c 1px solid;
+    margin-top: 25px;
+    width: auto;
+    padding: 5px 20px 20px 20px;
+}
+
+.total p {
+    font-weight: normal;
+    color: black;
+    padding-top: 15px;
+}
+
+.wr_score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total .score {
+    width: 250px;
+    text-align: right;
+    color: white;
+}
+
+
+/* стандарт. индекс */
+
+.forth_2_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+}
+
+.left_2,
+.right_2 {
+    width: auto;
+}
+
+.forth_2 {
+    width: 1096px;
+    background: #f2f4f5;
+    border: #59778c 2px solid;
+    margin: 40px;
+}
+
+.forth_2 .source {
+    margin: 0 25px 25px 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* классы для стандартиз. ставки от 2х источников*/
+
+.right_2 .forth_2_small {
+    margin-left: 0;
+}
+
+.forth_2_small {
+    width: 526px;
+    background: #f2f4f5;
+    border: #59778c 2px solid;
+    margin: 40px;
+}
+
+.forth_2_small .source {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 125px;
+    margin: 0 25px 25px 25px;
+}
+
+.forth_2 .options,
+.forth_2_small .options {
+    text-align: center;
+}
+
+.index {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.forth_2 p,
+.forth_2_small p {
+    padding: 15px;
+}
+
+.forth_2 .index .hideMobile,
+.forth_2_small .index .hideMobile {
+font-family: 'Open Sans', sans-serif;
+font-size: 14px;
+color: #7d7d7d;
+}
+
+.sqrt {
+    margin: 15px 0 15px 0;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    background: #59778c;
+    color: white;
+}
+
+.forth_2 input,
+.forth_2_small input {
+    width: 150px;
+    background: white;
+    border: #59778c 1px solid;
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 2px;
+}
+
+.forth_2 .long,
+.forth_2_small .long {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.forth_2 span,
+.forth_2_small span {
+    color: black;
+    font-size: 16px;
+    padding: 15px 0 0 10px;
+    margin-top: 2px;
+}
+
+.forth_2 .source .index,
+.forth_2_small .source .index {
+    margin: 0;
+    width: auto;
+}
+
+.forth_2 .source .sqrt,
+.forth_2_small .source .sqrt {
+    width: 40px;
+    height: 20px;
+    padding: 5px;
+    margin-top: 8px;
+    text-align: center;
+    background: #59778c;
+    color: white;
+}
+
+.forth_2 .sourse_bottom,
+.forth_2_small .sourse_bottom {
+    margin-left: 10px;
+}
+
+.forth_2_small .wrap_2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.block {
+    margin: 0 40px 0 40px;
+    width: auto;
+    background: #f2f4f5;
+    border: #59778c 2px solid;
+}
+
+.block .source {
+    margin-bottom: 25px;
+}
+
+.block .line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.block .line .inLine {
+    margin-top: 2px;
+}
+
+.block .indx {
+    position: relative;
+    display: inline-block;
+    color: white;
+    margin: 0;
+}
+
+.block .sqrt {
+    position: relative;
+    display: inline-block;
+    background: white;
+    color: #59778c;
+    padding: 3px;
+    font-weight: bold;
+    margin: 0 0 0 10px;
+}
+
+.wrap_2 button {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px 25px 10px 25px;
+    width: 210px;
+}
+
+.wrap_2 .btn-add {
+    background: #59778c;
+}
+
+.wrap_2 .btn-delete {
+    background: #b42424;
+    margin-left: 0;
+}
+
+button .btn-blue {
+    background: #0a1f2e;
+}
+
+button .btn-red {
+    background: #f04e4e;
+}
