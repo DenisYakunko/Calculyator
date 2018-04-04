@@ -11,7 +11,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
         <div class="left form-box">
             <div class="select_calc">
                 <select size="1" v-model="S1" class="no_styled">
-                    <option value="0" disabled selected> Вид заявки</option>
+                    <option value="0" disabled selected> Вид заявки2</option>
                     <option value="1">1. Постоянное присоединение</option>
                     <option value="2">2. Временное присоединение</option>
                 </select>
