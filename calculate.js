@@ -22,7 +22,7 @@ var app = new Vue({
         Calculate: 0, //расчет по power-мощности, standart-стандартизированной
         VoltageClass: 0, //Класс напряжения
 		Territory: 0, //Тип территории
-        Punkt_Sec: false, //Пункт секционирования
+        Rasp_punkt: false, //Пункт секционирования
         Lines_one: [{
             "id": 0,
             "select": 0,

@@ -119,8 +119,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
  			<div class="check">
                 <p>
                     <label>
-                        <input type="checkbox" value="check" v-model.lazy="Punkt_Sec" class="no_styled"> <!-- работает -->
-                        <span class="jq-checkbox" :class="{ checked: Punkt_Sec }"></span> Распределительный пункт
+                        <input type="checkbox" value="check" v-model.lazy="Rasp_punkt" class="no_styled"> <!-- работает -->
+                        <span class="jq-checkbox" :class="{ checked: Rasp_punkt }"></span> Распределительный пункт
                     </label>
                 </p>
             </div>
