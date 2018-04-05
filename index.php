@@ -45,7 +45,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 
     <!-- при условиях -->
     <div id="second">
-        <div class="check" v-if="N<=15 && S1 == 1 && S1!==0 && Category==3">
+<!--    <div class="check" v-if="N<=15 && S1 == 1 && S1!==0 && Category==3"> Было только при временном присоединен  -->
+		<div class="check" v-if="N<=15 && S1!==0 && Category==3"> <!-- Появляется при обоих условиях присоединения -->
             <p>
                 <label>
                     <input type="checkbox" value="check" v-model.lazy="Conditions" key="Conditions-checkbox">
