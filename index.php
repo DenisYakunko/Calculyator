@@ -92,7 +92,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 
     <!-- класс напряжения  -->	
 	<div id="third">
-       <div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>149 || S1 == 1 && N<=149 && Category==2">
+       <div id="build" >
 			<div class="select">
                 <select size="1" v-model.lazy="VoltageClass" class="no_styled">
                     <option value="0" disabled selected> Класс напряжения</option>
