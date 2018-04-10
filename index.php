@@ -76,7 +76,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
         </div>
     </div>
 
-    <!-- класс напряжения / строительство / расчет по -->
+    <!-- строительство  -->
     <div id="third">
        <div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>149 || S1 == 1 && N<=149 && Category==2">
             <div class="check">
@@ -87,22 +87,38 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     </label>
                 </p>
             </div>
-	
-            <div class="select">
+		</div>
+    </div>
+
+    <!-- класс напряжения  -->	
+	<div id="third">
+       <div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>149 || S1 == 1 && N<=149 && Category==2">
+			<div class="select">
                 <select size="1" v-model.lazy="VoltageClass" class="no_styled">
                     <option value="0" disabled selected> Класс напряжения</option>
                     <option value="1">0,4 кВ</option>
                     <option value="2">6 (10) кВ</option>
                 </select>
             </div>
-            <div class="calc">
+		</div>
+    </div>	
+
+    <!-- расчет по -->	
+	<div id="third">
+		<div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>149 || S1 == 1 && N<=149 && Category==2">	
+			<div class="calc">
                 <select size="1" v-model.lazy="Calculate" class="no_styled">
                     <option value="0" disabled selected> Расчет по:</option>
                     <option value="1">Мощности</option>
                     <option value="2">Стандартизированной ставке</option>
                 </select>
             </div>
-            <!-- выбор территории /  -->
+		</div>
+    </div>
+
+    <!-- выбор территории -->	
+	<div id="third">
+       <div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>149 || S1 == 1 && N<=149 && Category==2">
 			<div class="calc">
                 <select size="1" v-model.lazy="Territory" class="no_styled"> <!-- работает -->
                     <option value="0" disabled selected> Выбор территории:</option>
@@ -112,7 +128,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
             </div>
 		</div>
     </div>
-
+			
     <!-- по мощности -->
     <div id="forth"
          v-show="Conditions && VoltageClass !==0 && Build && Calculate == 1 && S1 == 1 || 
