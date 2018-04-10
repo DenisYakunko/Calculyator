@@ -113,23 +113,6 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 		</div>
     </div>
 
-<!-- Пункт секционирования, не работает, скопирован с "Необходимо строителство" (Section) Появляется при выборе Мощности N=>1000-->
-    <div id="third">
-<!--		<div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>999 || S1 == 1 && N<=999 && Category==2">   Было раньше-->
-		<div id="build" v-show="N>999"> <!--  Поправлено-->
-            
- 			<div class="check">
-                <p>
-                    <label>
-                        <input type="checkbox" value="check" v-model.lazy="Rasp_punkt" class="no_styled"> <!-- работает -->
-                        <span class="jq-checkbox" :class="{ checked: Rasp_punkt }"></span> Распределительный пункт
-                    </label>
-                </p>
-            </div>
-
-		</div>
-    </div>
-	
     <!-- по мощности -->
     <div id="forth"
          v-show="Conditions && VoltageClass !==0 && Build && Calculate == 1 && S1 == 1 || 
@@ -542,6 +525,24 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
             </div>
         </div>
     </div>
+	
+	<!-- Пункт секционирования, не работает, скопирован с "Необходимо строителство" (Section) Появляется при выборе Мощности N=>1000-->
+    <div id="third">
+<!--		<div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>999 || S1 == 1 && N<=999 && Category==2">   Было раньше-->
+		<div id="build" v-show="N>999"> <!--  Поправлено-->
+            
+ 			<div class="check">
+                <p>
+                    <label>
+                        <input type="checkbox" value="check" v-model.lazy="Rasp_punkt" class="no_styled"> <!-- работает -->
+                        <span class="jq-checkbox" :class="{ checked: Rasp_punkt }"></span> Распределительный пункт
+                    </label>
+                </p>
+            </div>
+
+		</div>
+    </div>
+	
     <div class="block"
          v-show="Conditions && VoltageClass !==0  && Build && Calculate == 2 && S1 == 1 ||
                     S1 == 1 && N>15 && VoltageClass !==0 && Build && Calculate == 2">
