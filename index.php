@@ -78,7 +78,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 
     <!-- строительство  -->
     <div id="third">
-       <div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>149 || S1 == 1 && N<=149 && Category==2">
+       <div id="build" v-show="N>149">
             <div class="check">
                 <p>
                     <label>
