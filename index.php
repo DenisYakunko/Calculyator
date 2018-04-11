@@ -457,8 +457,9 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     </div>
 					
                     <div class="long">
-                        <div class="left_text"><input type="number" step="0.01" placeholder="длина" v-model="item.L">
-                            <span>км</span></div>
+                        <div class="left_text"><input type="number" step="0.01" placeholder="длина (км)" v-model="item.L">
+                        
+						</div>
 
                     </div>
                 </div>
