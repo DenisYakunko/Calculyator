@@ -393,7 +393,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                  v-show="Conditions && VoltageClass !==0 && Build && Calculate == 2 && S1 == 1 || 
                  S1 == 1 && N>15 && VoltageClass !==0 && Build && Calculate == 2 || 
                  S1 == 1 && N<=15 && Category==2 && VoltageClass !==0 && Build && Calculate == 2">
-                <p class="options">Параметры для расчета стоимости по ставке за максимальную мощность для 1-го источника</p>
+                <p class="options">Параметры для расчета стоимости по стандартизированной ставке</p>
 <!--                 <div class="index">
                    <p>Индекс изменения сметной стоимости за:</p>
                     <div class="sqrt">{{(j)?j.Z.quarter : ""}}</div>
@@ -480,7 +480,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                  v-show="Conditions && VoltageClass !==0 && Build && Calculate == 2 ||
                     S1 == 1 && N>15 && VoltageClass !==0 && Build && Calculate == 2 || 
                     S1 == 1 && N<=15 && Category==2 && VoltageClass !==0 && Build && Calculate == 2">
-                <p class="options">Параметры для расчета стоимости по ставке за максимальную мощность для 2-го источника</p>
+                <p class="options">Параметры для расчета стоимости по стандартизированной ставке для 2-го источника</p>
 <!--                 <div class="index">
                     <p>Индекс изменения сметной стоимости за:</p>
                     <div class="sqrt">{{(j)?j.Z.quarter : ""}}</div>
