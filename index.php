@@ -105,7 +105,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 
     <!-- расчет по -->	
 	<div id="third">
-		<div id="build" v-show="S1 == 1 && N>15 || Conditions && S1 !== 1 || S1 == 1 && N>149 || S1 == 1 && N<=149 && Category==2">	
+		<div id="build" v-show="S1 == 2 && N<15 || S1 == 1 && N>15 || Conditions && S1 !== 1 || S1 == 1 && N>149 || S1 == 1 && N<=149 && Category==2">	
 		<!-- <div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>149 || S1 == 1 && N<=149 && Category==2">	 -->
 			<div class="calc">
                 <select size="1" v-model.lazy="Calculate" class="no_styled">
