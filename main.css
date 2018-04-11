@@ -397,8 +397,8 @@ color: #7d7d7d;
     border: #59778c 1px solid;
     color: black;
     font-size: 16px;
-    padding: 10px;
-    margin-top: 2px;
+    padding: 13px;
+    margin-top: 0px;
 }
 
 .forth_2 .long,
@@ -407,6 +407,7 @@ color: #7d7d7d;
     flex-direction: row;
     justify-content: space-between;
 }
+
 
 .forth_2 span,
 .forth_2_small span {
