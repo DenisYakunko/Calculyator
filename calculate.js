@@ -506,7 +506,7 @@ var app = new Vue({
                     this.Lines_one.forEach(function(e) {
                         if (e.L && e.L !== "0" && e.select !== "0") {
                             //первый источник
-                            console.log("строка из data.json", Number(this.j.Price.city.Ch000))
+                           console.log("строка из data.json", Number(this.j.Price_standart.cable.Ch4_1))
                             //if (e.select == 1) { y += (Number(this.j.Price.city.Ch000) * e.L * e.index) } //пример
                             
                             if (e.select == 2) { y += (Number(this.j.Standart[max].C2_2) * e.L * e.index) }
