@@ -579,28 +579,28 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 				
 					<p class="BuildTP_radio_2">Двухтрансформаторные</p>
 				
-                    <p v-show="radio8">
+                    <p v-show="radio5">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                                      v-show="radio5" value="C4_8" v-model="BuildTP_radio_2"
                                                      :disabled="!BuildTP"> от 100 до 250 кВА включительно (2 Тр)
                         </label>
                     </p>
-                    <p v-show="radio9">
+                    <p v-show="radio6">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                                      v-show="radio6" value="C4_9" v-model="BuildTP_radio_2"
                                                      :disabled="!BuildTP"> от 250 до 500 кВА включительно (2 Тр)
                         </label>
                     </p>
-                    <p v-show="radio10">
+                    <p v-show="radio7">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                                       v-show="radio7" value="C4_10" v-model="BuildTP_radio_2"
                                                       :disabled="!BuildTP"> от 500 до 900 кВА включительно (2 Тр)
                         </label>
                     </p>
-                    <p v-show="radio11">
+                    <p v-show="radio8">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                                       v-show="radio8" value="C4_11" v-model="BuildTP_radio_2"
