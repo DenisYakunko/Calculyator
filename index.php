@@ -280,7 +280,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                             <label>
                                 <input class="BuildTP_radio_1" type="radio" name="BuildTP_radio_1"
                                        value="C4_1" v-model="BuildTP_radio_1" :disabled="!BuildTP">
-                                от 100 до 250 кВА включительно (1 Тр)
+                                от 100 до 250 кВА включительно (111 Тр)
                             </label>
                         </p>
                         <p v-show="radio2">
@@ -301,7 +301,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                             <label>
                                 <input class="BuildTP_radio_1" type="radio" name="BuildTP_radio_1"
                                        value="C4_4" v-model="BuildTP_radio_1" :disabled="!BuildTP">
-                                Строительство ТП-6(10) кВ 100 кВА
+                                Строительство ТП-6(10) 111 кВ 100 кВА
                             </label>
                         </p>
                         <p v-show="radio5">
@@ -331,7 +331,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                             <label>
                                 <input class="BuildTP_radio_1" type="radio" name="BuildTP_radio_1"
                                        value="C4_8" v-model="BuildTP_radio_1" :disabled="!BuildTP">
-                                от 100 до 250 кВА включительно 
+                                от 100 до 250 кВА включительно 111 
                             </label>
                         </p>
                         <p v-show="radio9">
@@ -357,8 +357,6 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         </p>
                         <p v-show="radio12">
                             <label>
-                                <input class="BuildTP_radio_1" type="radio" name="BuildTP_radio_1"
-                                       value="C4_12" v-model="BuildTP_radio_1" :disabled="!BuildTP">
                                 Однотрасформаторные
                             </label>
                         </p>
@@ -502,32 +500,53 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         </select>
                     </div>
 					
-					<div class="select">
+					<div class="select" v-for="item in Tip_VL" :key="item.id">
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
-                            <option value="1" disabled selected>(при выборе напряжения 0,4 кВ)</option>
-                            <option value="2" v-if="Show_Ch2_2">сталеалюминий от 50 до 100 мм2</option>
-                            <option value="3" v-if="Show_Ch2_3">сталеалюминий от 100 до 200 мм2</option>
-                            <option value="4" v-if="Show_Ch2_4">алюминий от 100 до 200 мм2</option>
-                            <option value="5" disabled selected>в траншеях с многожильным кабелем:</option>
-                            <option value="6" v-if="Show_Ch3_2">резиновая и пластмассовая от 200 до 500 мм2</option>
-                            <option value="7" v-if="Show_Ch3_1_1">бумажная от 50 до 100 мм2</option>
-<!--                        <option value="8" v-if="Show_Ch3_2_1">бумажная от 100 до 200 мм2</option>
-							<option value="8" v-if="Show_Ch3_3_1">бумажная от 200 до 500 мм2</option>
-							<option value="8" v-if="Show_Ch3_4_1">в каналах многожильным кабелем</option>
-							<option value="8" v-if="Show_Ch3_5_1">бумажная от 50 до 100 мм2</option>
-							<option value="8" v-if="Show_Ch3_6_1">бумажная от 100 до 200 мм2</option>
-							<option value="8" v-if="Show_Ch3_7_1">бумажная от 200 до 500 мм2</option>-->
+                            <option value="1" disabled selected>изолированным проводом:</option>
+							<option value="2" v-if="Show_Ch4_1">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="3" v-if="Show_Ch4_2">- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="4" v-if="Show_Ch4_3">- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="5" v-if="Show_Ch4_4">- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
+							<option value="6" v-if="Show_Ch4_5">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="7" v-if="Show_Ch4_6">- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="8" v-if="Show_Ch4_7">- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="9" v-if="Show_Ch4_8">- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="10" v-if="Show_Ch4_9">- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="11" disabled selected>не изолированным проводом:</option>
+							<option value="12" v-if="Show_Ch4_10">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 неизолированный -->
+							<option value="13" disabled selected>в траншеях многожильным кабелем:</option>
+							<option value="14" v-if="Show_Ch4_11">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="15" v-if="Show_Ch4_12">- бумажная от 50 до 100 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="16" v-if="Show_Ch4_13">- бумажная от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="17" v-if="Show_Ch4_14">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="18" v-if="Show_Ch4_15">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="19" v-if="Show_Ch4_16">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="20" v-if="Show_Ch4_17">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="21" disabled selected>в каналах одноожильным кабелем:</option>
+							<option value="22" v-if="Show_Ch4_18">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="23" v-if="Show_Ch4_19">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="24" disabled selected>в каналах многожильным кабелем:</option>
+							<option value="25" v-if="Show_Ch4_20">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="26" v-if="Show_Ch4_21">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="27" v-if="Show_Ch4_22">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="28" v-if="Show_Ch4_23">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="29" v-if="Show_Ch4_24">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="30" disabled selected>методом ГНБ многожильным кабелем:</option>
+							<option value="31" v-if="Show_Ch4_25">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 ГНБ многожильный -->
+							<option value="32" v-if="Show_Ch4_26">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="33" v-if="Show_Ch4_27">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="34" v-if="Show_Ch4_28">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="35" disabled selected>методом ГНБ одножильным кабелем:</option>
+							<option value="36" v-if="Show_Ch4_29">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
                         </select>
                     </div>
 					
                     <div class="long">
-                        <div class="left_text"><input type="number" step="0.01" placeholder="длина" v-model="item.L">
-                            <span>км</span></div>
-<!--                        <div class="index">
-                            <p>Индекс</p>
-                            <div class="sqrt">{{item.index}}</div>
-                        </div>-->
+                        <div class="left_text"><input type="number" step="0.01" placeholder="длина (км)" v-model="item.L">
+                        
+						</div>
+
                     </div>
                 </div>
 
@@ -581,7 +600,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                    v-show="radio1" value="C4_1" v-model="BuildTP_radio_2"
-                                   :disabled="!BuildTP"> от 100 до 250 кВА включительно (1 Тр)
+                                   :disabled="!BuildTP"> от 100 до 250 кВА включительно (111 Тр)
                         </label>
                     </p>
                     <p v-show="radio2">
