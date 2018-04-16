@@ -162,41 +162,41 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
-							<option value="2" v-if="Show_Ch4_1">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="3" v-if="Show_Ch4_2">- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="4" v-if="Show_Ch4_3">- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="5" v-if="Show_Ch4_4">- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
-							<option value="6" v-if="Show_Ch4_5">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="7" v-if="Show_Ch4_6">- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="8" v-if="Show_Ch4_7">- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="9" v-if="Show_Ch4_8">- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
-							<option value="10" v-if="Show_Ch4_9">- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="3" v-if="Show_Ch4_2" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="4" v-if="Show_Ch4_3" v-show="Territory == 1 && VoltageClass == 1" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
+							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && VoltageClass == 2" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && VoltageClass == 2" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="9" v-if="Show_Ch4_8" v-show="Territory == 2 && VoltageClass == 2" >- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="10" v-if="Show_Ch4_9" v-show="Territory == 2 && VoltageClass == 2" >- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="11" disabled selected>не изолированным проводом:</option>
-							<option value="12" v-if="Show_Ch4_10">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 неизолированный -->
+							<option value="12" v-if="Show_Ch4_10" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 неизолированный -->
 							<option value="13" disabled selected>в траншеях многожильным кабелем:</option>
-							<option value="14" v-if="Show_Ch4_11">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="15" v-if="Show_Ch4_12">- бумажная от 50 до 100 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="16" v-if="Show_Ch4_13">- бумажная от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="17" v-if="Show_Ch4_14">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="18" v-if="Show_Ch4_15">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="19" v-if="Show_Ch4_16">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="20" v-if="Show_Ch4_17">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="21" disabled selected>в каналах одноожильным кабелем:</option>
-							<option value="22" v-if="Show_Ch4_18">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы одножильный -->
-							<option value="23" v-if="Show_Ch4_19">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="14" v-if="Show_Ch4_11" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="15" v-if="Show_Ch4_12" v-show="Territory == 1 && VoltageClass == 1" >- бумажная от 50 до 100 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="16" v-if="Show_Ch4_13" v-show="Territory == 1 && VoltageClass == 1" >- бумажная от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="17" v-if="Show_Ch4_14" v-show="Territory == 1 && VoltageClass == 2" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="18" v-if="Show_Ch4_15" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="19" v-if="Show_Ch4_16" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="20" v-if="Show_Ch4_17" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="21" disabled selected>в каналах одножильным кабелем:</option>
+							<option value="22" v-if="Show_Ch4_18" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="23" v-if="Show_Ch4_19" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы одножильный -->
 							<option value="24" disabled selected>в каналах многожильным кабелем:</option>
-							<option value="25" v-if="Show_Ch4_20">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы многожильный -->
-							<option value="26" v-if="Show_Ch4_21">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы многожильный -->
-							<option value="27" v-if="Show_Ch4_22">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 каналы многожильный -->
-							<option value="28" v-if="Show_Ch4_23">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 каналы многожильный -->
-							<option value="29" v-if="Show_Ch4_24">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="25" v-if="Show_Ch4_20" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="26" v-if="Show_Ch4_21" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="27" v-if="Show_Ch4_22" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="28" v-if="Show_Ch4_23" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="29" v-if="Show_Ch4_24" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 каналы многожильный -->
 							<option value="30" disabled selected>методом ГНБ многожильным кабелем:</option>
-							<option value="31" v-if="Show_Ch4_25">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 ГНБ многожильный -->
-							<option value="32" v-if="Show_Ch4_26">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
-							<option value="33" v-if="Show_Ch4_27">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
-							<option value="34" v-if="Show_Ch4_28">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="31" v-if="Show_Ch4_25" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 ГНБ многожильный -->
+							<option value="32" v-if="Show_Ch4_26" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="33" v-if="Show_Ch4_27" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="34" v-if="Show_Ch4_28" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
 							<option value="35" disabled selected>методом ГНБ одножильным кабелем:</option>
-							<option value="36" v-if="Show_Ch4_29">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="36" v-if="Show_Ch4_29" v-show="Territory == 1 && VoltageClass == 2" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
                         </select>
                     </div>
 <!-- 					
@@ -250,41 +250,41 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
-							<option value="2" v-if="Show_Ch4_1">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="3" v-if="Show_Ch4_2">- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="4" v-if="Show_Ch4_3">- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="5" v-if="Show_Ch4_4">- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
-							<option value="6" v-if="Show_Ch4_5">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="7" v-if="Show_Ch4_6">- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="8" v-if="Show_Ch4_7">- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="9" v-if="Show_Ch4_8">- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
-							<option value="10" v-if="Show_Ch4_9">- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="3" v-if="Show_Ch4_2" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="4" v-if="Show_Ch4_3" v-show="Territory == 1 && VoltageClass == 1" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
+							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && VoltageClass == 2" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && VoltageClass == 2" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="9" v-if="Show_Ch4_8" v-show="Territory == 2 && VoltageClass == 2" >- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="10" v-if="Show_Ch4_9" v-show="Territory == 2 && VoltageClass == 2" >- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="11" disabled selected>не изолированным проводом:</option>
-							<option value="12" v-if="Show_Ch4_10">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 неизолированный -->
+							<option value="12" v-if="Show_Ch4_10" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 неизолированный -->
 							<option value="13" disabled selected>в траншеях многожильным кабелем:</option>
-							<option value="14" v-if="Show_Ch4_11">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="15" v-if="Show_Ch4_12">- бумажная от 50 до 100 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="16" v-if="Show_Ch4_13">- бумажная от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="17" v-if="Show_Ch4_14">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="18" v-if="Show_Ch4_15">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="19" v-if="Show_Ch4_16">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="20" v-if="Show_Ch4_17">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="21" disabled selected>в каналах одноожильным кабелем:</option>
-							<option value="22" v-if="Show_Ch4_18">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы одножильный -->
-							<option value="23" v-if="Show_Ch4_19">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="14" v-if="Show_Ch4_11" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="15" v-if="Show_Ch4_12" v-show="Territory == 1 && VoltageClass == 1" >- бумажная от 50 до 100 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="16" v-if="Show_Ch4_13" v-show="Territory == 1 && VoltageClass == 1" >- бумажная от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="17" v-if="Show_Ch4_14" v-show="Territory == 1 && VoltageClass == 2" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="18" v-if="Show_Ch4_15" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="19" v-if="Show_Ch4_16" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="20" v-if="Show_Ch4_17" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="21" disabled selected>в каналах одножильным кабелем:</option>
+							<option value="22" v-if="Show_Ch4_18" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="23" v-if="Show_Ch4_19" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы одножильный -->
 							<option value="24" disabled selected>в каналах многожильным кабелем:</option>
-							<option value="25" v-if="Show_Ch4_20">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы многожильный -->
-							<option value="26" v-if="Show_Ch4_21">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы многожильный -->
-							<option value="27" v-if="Show_Ch4_22">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 каналы многожильный -->
-							<option value="28" v-if="Show_Ch4_23">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 каналы многожильный -->
-							<option value="29" v-if="Show_Ch4_24">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="25" v-if="Show_Ch4_20" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="26" v-if="Show_Ch4_21" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="27" v-if="Show_Ch4_22" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="28" v-if="Show_Ch4_23" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="29" v-if="Show_Ch4_24" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 каналы многожильный -->
 							<option value="30" disabled selected>методом ГНБ многожильным кабелем:</option>
-							<option value="31" v-if="Show_Ch4_25">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 ГНБ многожильный -->
-							<option value="32" v-if="Show_Ch4_26">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
-							<option value="33" v-if="Show_Ch4_27">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
-							<option value="34" v-if="Show_Ch4_28">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="31" v-if="Show_Ch4_25" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 ГНБ многожильный -->
+							<option value="32" v-if="Show_Ch4_26" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="33" v-if="Show_Ch4_27" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="34" v-if="Show_Ch4_28" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
 							<option value="35" disabled selected>методом ГНБ одножильным кабелем:</option>
-							<option value="36" v-if="Show_Ch4_29">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="36" v-if="Show_Ch4_29" v-show="Territory == 1 && VoltageClass == 2" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
                         </select>
                     </div>
 <!--					
@@ -341,41 +341,41 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
-							<option value="2" v-if="Show_Ch4_1">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="3" v-if="Show_Ch4_2">- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="4" v-if="Show_Ch4_3">- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="5" v-if="Show_Ch4_4">- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
-							<option value="6" v-if="Show_Ch4_5">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="7" v-if="Show_Ch4_6">- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="8" v-if="Show_Ch4_7">- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="9" v-if="Show_Ch4_8">- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
-							<option value="10" v-if="Show_Ch4_9">- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="3" v-if="Show_Ch4_2" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="4" v-if="Show_Ch4_3" v-show="Territory == 1 && VoltageClass == 1" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
+							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && VoltageClass == 2" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && VoltageClass == 2" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="9" v-if="Show_Ch4_8" v-show="Territory == 2 && VoltageClass == 2" >- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="10" v-if="Show_Ch4_9" v-show="Territory == 2 && VoltageClass == 2" >- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="11" disabled selected>не изолированным проводом:</option>
-							<option value="12" v-if="Show_Ch4_10">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 неизолированный -->
+							<option value="12" v-if="Show_Ch4_10" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 неизолированный -->
 							<option value="13" disabled selected>в траншеях многожильным кабелем:</option>
-							<option value="14" v-if="Show_Ch4_11">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="15" v-if="Show_Ch4_12">- бумажная от 50 до 100 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="16" v-if="Show_Ch4_13">- бумажная от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="17" v-if="Show_Ch4_14">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="18" v-if="Show_Ch4_15">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="19" v-if="Show_Ch4_16">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="20" v-if="Show_Ch4_17">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="21" disabled selected>в каналах одноожильным кабелем:</option>
-							<option value="22" v-if="Show_Ch4_18">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы одножильный -->
-							<option value="23" v-if="Show_Ch4_19">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="14" v-if="Show_Ch4_11" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="15" v-if="Show_Ch4_12" v-show="Territory == 1 && VoltageClass == 1" >- бумажная от 50 до 100 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="16" v-if="Show_Ch4_13" v-show="Territory == 1 && VoltageClass == 1" >- бумажная от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="17" v-if="Show_Ch4_14" v-show="Territory == 1 && VoltageClass == 2" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="18" v-if="Show_Ch4_15" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="19" v-if="Show_Ch4_16" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="20" v-if="Show_Ch4_17" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="21" disabled selected>в каналах одножильным кабелем:</option>
+							<option value="22" v-if="Show_Ch4_18" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="23" v-if="Show_Ch4_19" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы одножильный -->
 							<option value="24" disabled selected>в каналах многожильным кабелем:</option>
-							<option value="25" v-if="Show_Ch4_20">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы многожильный -->
-							<option value="26" v-if="Show_Ch4_21">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы многожильный -->
-							<option value="27" v-if="Show_Ch4_22">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 каналы многожильный -->
-							<option value="28" v-if="Show_Ch4_23">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 каналы многожильный -->
-							<option value="29" v-if="Show_Ch4_24">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="25" v-if="Show_Ch4_20" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="26" v-if="Show_Ch4_21" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="27" v-if="Show_Ch4_22" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="28" v-if="Show_Ch4_23" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="29" v-if="Show_Ch4_24" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 каналы многожильный -->
 							<option value="30" disabled selected>методом ГНБ многожильным кабелем:</option>
-							<option value="31" v-if="Show_Ch4_25">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 ГНБ многожильный -->
-							<option value="32" v-if="Show_Ch4_26">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
-							<option value="33" v-if="Show_Ch4_27">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
-							<option value="34" v-if="Show_Ch4_28">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="31" v-if="Show_Ch4_25" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 ГНБ многожильный -->
+							<option value="32" v-if="Show_Ch4_26" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="33" v-if="Show_Ch4_27" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="34" v-if="Show_Ch4_28" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
 							<option value="35" disabled selected>методом ГНБ одножильным кабелем:</option>
-							<option value="36" v-if="Show_Ch4_29">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="36" v-if="Show_Ch4_29" v-show="Territory == 1 && VoltageClass == 2" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
                         </select>
                     </div>
 					
@@ -429,41 +429,41 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
-							<option value="2" v-if="Show_Ch4_1">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="3" v-if="Show_Ch4_2">- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="4" v-if="Show_Ch4_3">- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="5" v-if="Show_Ch4_4">- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
-							<option value="6" v-if="Show_Ch4_5">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="7" v-if="Show_Ch4_6">- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="8" v-if="Show_Ch4_7">- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="9" v-if="Show_Ch4_8">- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
-							<option value="10" v-if="Show_Ch4_9">- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="3" v-if="Show_Ch4_2" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="4" v-if="Show_Ch4_3" v-show="Territory == 1 && VoltageClass == 1" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
+							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && VoltageClass == 2" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && VoltageClass == 2" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="9" v-if="Show_Ch4_8" v-show="Territory == 2 && VoltageClass == 2" >- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
+							<option value="10" v-if="Show_Ch4_9" v-show="Territory == 2 && VoltageClass == 2" >- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="11" disabled selected>не изолированным проводом:</option>
-							<option value="12" v-if="Show_Ch4_10">- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 неизолированный -->
+							<option value="12" v-if="Show_Ch4_10" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 неизолированный -->
 							<option value="13" disabled selected>в траншеях многожильным кабелем:</option>
-							<option value="14" v-if="Show_Ch4_11">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="15" v-if="Show_Ch4_12">- бумажная от 50 до 100 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="16" v-if="Show_Ch4_13">- бумажная от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
-							<option value="17" v-if="Show_Ch4_14">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="18" v-if="Show_Ch4_15">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="19" v-if="Show_Ch4_16">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="20" v-if="Show_Ch4_17">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
-							<option value="21" disabled selected>в каналах одноожильным кабелем:</option>
-							<option value="22" v-if="Show_Ch4_18">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы одножильный -->
-							<option value="23" v-if="Show_Ch4_19">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="14" v-if="Show_Ch4_11" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="15" v-if="Show_Ch4_12" v-show="Territory == 1 && VoltageClass == 1" >- бумажная от 50 до 100 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="16" v-if="Show_Ch4_13" v-show="Territory == 1 && VoltageClass == 1" >- бумажная от 100 до 200 мм2</option> <!-- Город, 0,4 траншеи многожильный -->
+							<option value="17" v-if="Show_Ch4_14" v-show="Territory == 1 && VoltageClass == 2" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="18" v-if="Show_Ch4_15" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="19" v-if="Show_Ch4_16" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="20" v-if="Show_Ch4_17" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 траншеи многожильный -->
+							<option value="21" disabled selected>в каналах одножильным кабелем:</option>
+							<option value="22" v-if="Show_Ch4_18" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы одножильный -->
+							<option value="23" v-if="Show_Ch4_19" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы одножильный -->
 							<option value="24" disabled selected>в каналах многожильным кабелем:</option>
-							<option value="25" v-if="Show_Ch4_20">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы многожильный -->
-							<option value="26" v-if="Show_Ch4_21">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы многожильный -->
-							<option value="27" v-if="Show_Ch4_22">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 каналы многожильный -->
-							<option value="28" v-if="Show_Ch4_23">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 каналы многожильный -->
-							<option value="29" v-if="Show_Ch4_24">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="25" v-if="Show_Ch4_20" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="26" v-if="Show_Ch4_21" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 0,4 каналы многожильный -->
+							<option value="27" v-if="Show_Ch4_22" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="28" v-if="Show_Ch4_23" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 каналы многожильный -->
+							<option value="29" v-if="Show_Ch4_24" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 каналы многожильный -->
 							<option value="30" disabled selected>методом ГНБ многожильным кабелем:</option>
-							<option value="31" v-if="Show_Ch4_25">- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 ГНБ многожильный -->
-							<option value="32" v-if="Show_Ch4_26">- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
-							<option value="33" v-if="Show_Ch4_27">- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
-							<option value="34" v-if="Show_Ch4_28">- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="31" v-if="Show_Ch4_25" v-show="Territory == 1 && VoltageClass == 1" >- резиновая и пластмассовая от 100 до 200 мм2</option> <!-- Город, 0,4 ГНБ многожильный -->
+							<option value="32" v-if="Show_Ch4_26" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 50 до 100 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="33" v-if="Show_Ch4_27" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 100 до 200 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="34" v-if="Show_Ch4_28" v-show="Territory == 1 && VoltageClass == 2" >- бумажная от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
 							<option value="35" disabled selected>методом ГНБ одножильным кабелем:</option>
-							<option value="36" v-if="Show_Ch4_29">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
+							<option value="36" v-if="Show_Ch4_29" v-show="Territory == 1 && VoltageClass == 2" >- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
                         </select>
                     </div>
 					
