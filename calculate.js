@@ -354,8 +354,8 @@ var app = new Vue({
                         //прячем строительство ТП если класс 6-10
                         if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
-                        if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6]) }
-                        if (this.Category == 2) { this.showRadio([9, 10]) }
+                    //    if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6]) }
+                    //    if (this.Category == 2) { this.showRadio([9, 10]) }
                     }
 
                     if (N > 150) {
@@ -370,8 +370,8 @@ var app = new Vue({
                         //прячем строительство ТП если класс 6-10
                         if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
-                        if (this.Category == 3) { this.showRadio([6, 7, 8, 9, 10, 11, 12, 13, 14]) }
-                        if (this.Category == 2) { this.showRadio([6, 7, 8, 10, 11, 12, 13, 14]) }
+                        if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
+                    //    if (this.Category == 2) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
                     }
 
                     /////////////////////////////

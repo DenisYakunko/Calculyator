@@ -519,12 +519,16 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     </div>
                 </label>
             </div>
+			
             <div class="inner_wrap" v-show="BuildTP">
                 <div class="left">
+				
+				<p class="BuildTP_radio_2">Однотрансформаторные</p>
+				
                     <p v-show="radio1">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
-                                   v-show="radio1" value="C4_1" v-model="BuildTP_radio_2"
+                                   v-show="radio1" value="C5_1" v-model="BuildTP_radio_2"
                                    :disabled="!BuildTP"> от 100 до 250 кВА включительно (111 Тр)
                         </label>
                     </p>
@@ -532,7 +536,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                    v-show="radio2" value="C4_2" v-model="BuildTP_radio_2"
-                                   :disabled="!BuildTP"> от 150 до 500 кВА включительно (1 Тр)
+                                   :disabled="!BuildTP"> от 250 до 500 кВА включительно (1 Тр)
                         </label>
                     </p>
                     <p v-show="radio3">
@@ -546,10 +550,10 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                                      v-show="radio4" value="C4_4" v-model="BuildTP_radio_2"
-                                                     :disabled="!BuildTP"> от 100 до 250 кВА включительно (2 Тр)
+                                                     :disabled="!BuildTP"> от 500 до 900 кВА включительно (Не город)
                         </label>
                     </p>
-                    <p v-show="radio5">
+ <!--                    <p v-show="radio5">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                                      v-show="radio5" value="C4_5" v-model="BuildTP_radio_2"
@@ -569,39 +573,42 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                                                      v-show="radio7" value="C4_7" v-model="BuildTP_radio_2"
                                                      :disabled="!BuildTP"> от 100 до 250 кВа включительно (1 Тр)
                         </label>
-                    </p>
-                </div>
+                    </p>-->
+                </div> 
                 <div class="right">
+				
+					<p class="BuildTP_radio_2">Двухтрансформаторные</p>
+				
                     <p v-show="radio8">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
-                                                     v-show="radio8" value="C4_8" v-model="BuildTP_radio_2"
-                                                     :disabled="!BuildTP"> от 100 до 250 кВА включительно (1 Тр)
+                                                     v-show="radio5" value="C4_8" v-model="BuildTP_radio_2"
+                                                     :disabled="!BuildTP"> от 100 до 250 кВА включительно (2 Тр)
                         </label>
                     </p>
                     <p v-show="radio9">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
-                                                     v-show="radio9" value="C4_9" v-model="BuildTP_radio_2"
-                                                     :disabled="!BuildTP"> Строительство ТП-6(10) кВ 2x160 кВА
+                                                     v-show="radio6" value="C4_9" v-model="BuildTP_radio_2"
+                                                     :disabled="!BuildTP"> от 250 до 500 кВА включительно (2 Тр)
                         </label>
                     </p>
                     <p v-show="radio10">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
-                                                      v-show="radio10" value="C4_10" v-model="BuildTP_radio_2"
-                                                      :disabled="!BuildTP"> Строительство ТП-6(10) кВ 2x250 кВА
+                                                      v-show="radio7" value="C4_10" v-model="BuildTP_radio_2"
+                                                      :disabled="!BuildTP"> от 500 до 900 кВА включительно (2 Тр)
                         </label>
                     </p>
                     <p v-show="radio11">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
-                                                      v-show="radio11" value="C4_11" v-model="BuildTP_radio_2"
-                                                      :disabled="!BuildTP"> Строительство ТП-6(10) кВ 2x400 кВА
+                                                      v-show="radio8" value="C4_11" v-model="BuildTP_radio_2"
+                                                      :disabled="!BuildTP"> свыше 900 кВА (2 Тр)
                         </label>
                     </p>
-                    <p v-show="radio12">
-                        <label>
+ <!--                   <p v-show="radio12">
+                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                                       v-show="radio12" value="C4_12" v-model="BuildTP_radio_2"
                                                       :disabled="!BuildTP"> Строительство ТП-6(10) кВ 2x630 кВА
@@ -620,7 +627,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                                                       v-show="radio14" value="C4_14" v-model="BuildTP_radio_2"
                                                       :disabled="!BuildTP"> Строительство ТП-6(10) кВ 2x1250 кВА
                         </label>
-                    </p>
+                    </p>-->
                 </div>
             </div>
         </div>
