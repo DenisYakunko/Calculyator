@@ -199,13 +199,13 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 							<option value="36" v-if="Show_Ch4_29">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
                         </select>
                     </div>
-					
+<!-- 					
                     <div class="long">
                         <div class="left_text"><input type="number" step="0.01" placeholder="длина (км)" v-model="item.L">
                         
 						</div>
 
-                    </div>
+                    </div>  -->
                 </div>
 
                 <div class="wrap_2">
@@ -287,13 +287,13 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 							<option value="36" v-if="Show_Ch4_29">- резиновая и пластмассовая от 200 до 500 мм2</option> <!-- Город, 6-10 ГНБ многожильный -->
                         </select>
                     </div>
-					
+<!--					
                     <div class="long">
                         <div class="left_text"><input type="number" step="0.01" placeholder="длина (км)" v-model="item.L">
                         
 						</div>
 
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="wrap_2">
