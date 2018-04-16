@@ -528,8 +528,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     <p v-show="radio1">
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
-                                   v-show="radio1" value="C5_1" v-model="BuildTP_radio_2"
-                                   :disabled="!BuildTP"> от 100 до 250 кВА включительно (111 Тр)
+                                   v-show="radio1" value="C4_1" v-model="BuildTP_radio_2"
+                                   :disabled="!BuildTP"> от 100 до 250 кВА включительно (1 Тр)
                         </label>
                     </p>
                     <p v-show="radio2">
