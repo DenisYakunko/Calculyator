@@ -338,13 +338,13 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                             <option value="8" v-if="Show_Ch3_2_1"  v-show="VoltageClass == 2" >Кабельная линия 6-10кВ с применением ГНБ*</option>
                         </select>
                     </div>
-<!-- выбор матриалов изоляции для Линии 1 - не долделана!!!  скорирована с Выбора типа линии -->					
+<!-- выбор матриалов изоляции для Линии 1 - не долделана!!!  скопирована с Выбора типа линии -->					
 					<div class="select" v-for="item in Tip_VL" :key="item.id">
                     <pre>{{item}}</pre>
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
-							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
+							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="3" v-if="Show_Ch4_2" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="4" v-if="Show_Ch4_3" v-show="Territory == 1 && VoltageClass == 1" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && VoltageClass == 2" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
