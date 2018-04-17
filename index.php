@@ -339,10 +339,10 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         </select>
                     </div>
 <!-- выбор матриалов изоляции для Линии 1 - не долделана!!!  скопирована с Выбора типа линии -->					
-					<div class="select" v-for="item in Tip_VL" :key="item.id">
-                    <pre>{{Lines_one}}</pre>
-                    <pre>{{Territory}}</pre>
-                        <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
+					<div class="select">
+					<pre>{{Lines_one}}</pre>
+					<pre>{{Tip_VL}}</pre> 
+                        <select class="no_styled" v-model="item.Tip_VL" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
 							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
