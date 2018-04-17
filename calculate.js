@@ -96,22 +96,22 @@ var app = new Vue({
 
 
         //отображать/скрывать элементы
-        Show_Ch2_1: false,
-        Show_Ch2_2: false,
-        Show_Ch2_3: false,
-        Show_Ch2_4: false,
-        Show_Ch3_1: false,
-        Show_Ch3_2: false,
-        Show_Ch3_1_1: false,
-        Show_Ch3_2_1: false,
-        Show_Ch2__2_1: false,
-        Show_Ch2__2_2: false,
-        Show_Ch2__2_3: false,
-        Show_Ch2__2_4: false,
-        Show_Ch2__3_1: false,
-        Show_Ch2__3_2: false,
-        Show_Ch2__3_1_1: false,
-        Show_Ch2__3_2_1: false,
+        Show_Ch2_1: true,
+        Show_Ch2_2: true,
+        Show_Ch2_3: true,
+        Show_Ch2_4: true,
+        Show_Ch3_1: true,
+        Show_Ch3_2: true,
+        Show_Ch3_1_1: true,
+        Show_Ch3_2_1: true,
+        Show_Ch2__2_1: true,
+        Show_Ch2__2_2: true,
+        Show_Ch2__2_3: true,
+        Show_Ch2__2_4: true,
+        Show_Ch2__3_1: true,
+        Show_Ch2__3_2: true,
+        Show_Ch2__3_1_1: true,
+        Show_Ch2__3_2_1: true,
 
 
         //Отображать скрывать способ прокладки, материал, сечение жилы			
@@ -241,29 +241,29 @@ var app = new Vue({
                 }, this);
             }
         },
-        showCheckbox: function(arr) {
-            if (Array.isArray(arr) && arr.length > 0) {
-                this.Show_Ch2_1 = false
-                this.Show_Ch2_2 = false
-                this.Show_Ch2_3 = false
-                this.Show_Ch2_4 = false
-                this.Show_Ch3_1 = false
-                this.Show_Ch3_2 = false
-                this.Show_Ch3_1_1 = false
-                this.Show_Ch3_2_1 = false
+    //    showCheckbox: function(arr) {
+    //        if (Array.isArray(arr) && arr.length > 0) {
+    //            this.Show_Ch2_1 = false
+    //            this.Show_Ch2_2 = false
+    //            this.Show_Ch2_3 = false
+    //            this.Show_Ch2_4 = false
+    //            this.Show_Ch3_1 = false
+    //            this.Show_Ch3_2 = false
+    //            this.Show_Ch3_1_1 = false
+    //            this.Show_Ch3_2_1 = false
 
-                arr.forEach(function(element, i) {
-                    if (element === 21) { this.Show_Ch2_1 = true }
-                    if (element === 22) { this.Show_Ch2_2 = true }
-                    if (element === 23) { this.Show_Ch2_3 = true }
-                    if (element === 24) { this.Show_Ch2_4 = true }
-                    if (element === 31) { this.Show_Ch3_1 = true }
-                    if (element === 32) { this.Show_Ch3_2 = true }
-                    if (element === 311) { this.Show_Ch3_1_1 = true }
-                    if (element === 321) { this.Show_Ch3_2_1 = true }
-                }, this)
-            }
-        },
+    //            arr.forEach(function(element, i) {
+    //                if (element === 21) { this.Show_Ch2_1 = true }
+    //                if (element === 22) { this.Show_Ch2_2 = true }
+    //                if (element === 23) { this.Show_Ch2_3 = true }
+    //                if (element === 24) { this.Show_Ch2_4 = true }
+    //                if (element === 31) { this.Show_Ch3_1 = true }
+    //                if (element === 32) { this.Show_Ch3_2 = true }
+    //                if (element === 311) { this.Show_Ch3_1_1 = true }
+    //                if (element === 321) { this.Show_Ch3_2_1 = true }
+    //            }, this)
+    //        }
+    //    },
         result: function(e) {
             if (e) {
                 e += e * 18 / 100 // +18% НДС
@@ -360,12 +360,12 @@ var app = new Vue({
 
                     if (N > 150) {
                         max = "min150"
-                        if (this.VoltageClass == 1) {
-                            this.showCheckbox([21, 23, 31, 32, 321])
-                        }
-                        if (this.VoltageClass == 2) {
-                            this.showCheckbox([23, 32, 321])
-                        }
+                    //    if (this.VoltageClass == 1) {
+                    //        this.showCheckbox([21, 23, 31, 32, 321])
+                    //    }
+                    //    if (this.VoltageClass == 2) {
+                    //        this.showCheckbox([23, 32, 321])
+                    //    }
 
                         //прячем строительство ТП если класс 6-10
                         if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
@@ -489,12 +489,12 @@ var app = new Vue({
 
                     if (N > 150) {
                         max = "min150"
-                        if (this.VoltageClass == 1) {
-                            this.showCheckbox([22, 23, 24, 31, 32, 321])
-                        }
-                        if (this.VoltageClass == 2) {
-                            this.showCheckbox([23, 24, 32, 321])
-                        }
+                    //    if (this.VoltageClass == 1) {
+                    //        this.showCheckbox([22, 23, 24, 31, 32, 321])
+                    //    }
+                    //    if (this.VoltageClass == 2) {
+                    //        this.showCheckbox([23, 24, 32, 321])
+                    //    }
 
                         //прячем строительство ТП если класс 6-10
                         if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
@@ -510,14 +510,18 @@ var app = new Vue({
                            console.log("строка из data.json", Number(this.j.Price_standart.cable.Ch4_1))
                             //if (e.select == 1) { y += (Number(this.j.Price.city.Ch000) * e.L * e.index) } //пример
                             
-                            if (e.select == 2) { y += (Number(this.j.Standart[max].C2_2) * e.L * e.index) }
+							//ппример расчета
+                            if (e.select == 1) { y += (Number(this.j.Price_standart.cable.Ch4_1) * e.L) }
+							if (e.select == 2) { y += (Number(this.j.Price_standart.cable.Ch4_2) * e.L) }
+console.log("one line=", y)
+                        //    if (e.select == 2) { y += (Number(this.j.Standart[max].C2_2) * e.L * e.index) }
                             if (e.select == 3) { y += (Number(this.j.Standart[max].C2_3) * e.L * e.index) }
                             if (e.select == 4) { y += (Number(this.j.Standart[max].C2_4) * e.L * e.index) }
                             if (e.select == 5) { y += (Number(this.j.Standart[max].C3_1) * e.L * e.index) }
                             if (e.select == 6) { y += (Number(this.j.Standart[max].C3_2) * e.L * e.index) }
                             if (e.select == 7) { y += (Number(this.j.Standart[max].C3_1_1) * e.L * e.index) }
                             if (e.select == 8) { y += (Number(this.j.Standart[max].C3_2_1) * e.L * e.index) }
-                            console.log("one line=", y)
+                         //   console.log("one line=", y)
                         }
                     }, this);
 
