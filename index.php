@@ -652,7 +652,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
     </div>
 </div>
 
-<script src="vue.min.js"></script>
+<script src="vue.js"></script>
+<!-- <script src="vue.min.js"></script> -->
 <script src="calculate.js"></script>
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
