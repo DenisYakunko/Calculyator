@@ -323,6 +323,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     <p class="quart">квартал<span class="hideMobile">2017г.</span></p>
                 </div> -->
                 <div class="source" v-for="item in Lines_one" :key="item.id">
+                <pre>{{item}}</pre>
+                
                     <div class="select">
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите тип линии</option>
@@ -338,6 +340,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     </div>
 <!-- выбор матриалов изоляции для Линии 1 - не долделана!!!  скорирована с Выбора типа линии -->					
 					<div class="select" v-for="item in Tip_VL" :key="item.id">
+                    <pre>{{item}}</pre>
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
