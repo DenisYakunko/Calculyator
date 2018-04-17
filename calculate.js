@@ -34,13 +34,14 @@ var app = new Vue({
             "id": 0,
             "select": 0,
             "index": 0,
+			"Tip_VL": 0,
             "L": "",
         }], //Линии
 		
-		Tip_VL: [{
-            "id": 0,
-            "select": 0,
-            "index": 0,
+//		Tip_VL: [{
+//            "id": 0,
+//            "select": 0,
+//            "index": 0,
         }], //Выбор спосбов прокладки, материалов и сечения для линии
         hover: false,
 
