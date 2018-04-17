@@ -158,8 +158,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         </select>
                     </div>
 <!-- выбор матриалов изоляции для Линии 1 - не долделана!!!  скорирована с Выбора типа линии -->					
-					<div class="select" v-for="item in Tip_VL" :key="item.id">
-                        <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
+					<div class="select">
+                        <select class="no_styled" v-model="item.Tip_VL" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
 							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
@@ -247,7 +247,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     </div>
 					
 					<div class="select" v-for="item in Tip_VL" :key="item.id">
-                        <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
+                        <select class="no_styled" v-model="item.Tip_VL" v-on:change="index(item, 'two')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
 							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
@@ -323,7 +323,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     <p class="quart">квартал<span class="hideMobile">2017г.</span></p>
                 </div> -->
                 <div class="source" v-for="item in Lines_one" :key="item.id">
-                <pre>{{item}}</pre>
+<!--                <pre>{{item}}</pre> -->
                 
                     <div class="select">
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
@@ -340,8 +340,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     </div>
 <!-- выбор матриалов изоляции для Линии 1 - не долделана!!!  скопирована с Выбора типа линии -->					
 					<div class="select">
-					<pre>{{Lines_one}}</pre>
-					<pre>{{Tip_VL}}</pre> 
+<!--				<pre>{{Lines_one}}</pre>
+					<pre>{{Tip_VL}}</pre> -->
                         <select class="no_styled" v-model="item.Tip_VL" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
@@ -429,8 +429,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         </select>
                     </div>
 					
-					<div class="select" v-for="item in Tip_VL" :key="item.id">
-                        <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
+					<div class="select">
+                        <select class="no_styled" v-model="item.Tip_VL" v-on:change="index(item, 'two')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
 							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && VoltageClass == 1" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
