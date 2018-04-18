@@ -326,13 +326,13 @@ var app = new Vue({
                     // до 15
                     if (N <= 15) {
                         max = "max150"
-                        if (this.Conditions || this.Category !== 2) {
-                            if (this.VoltageClass == 1) {
-                                this.showCheckbox([21, 23, 31, 32, 311])
-                            }
-                            if (this.VoltageClass == 2) {
-                                this.showCheckbox([23, 32])
-                            }
+                    //    if (this.Conditions || this.Category !== 2) {
+                    //        if (this.VoltageClass == 1) {
+                    //            this.showCheckbox([21, 23, 31, 32, 311])
+                    //       }
+                    //        if (this.VoltageClass == 2) {
+                    //            this.showCheckbox([23, 32])
+                    //        }
 
                             //прячем строительство ТП если класс 6-10
                             if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
