@@ -246,7 +246,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         </select>
                     </div>
 					
-					<div class="select" v-for="item in Tip_VL" :key="item.id">
+					<div class="select">
                         <select class="no_styled" v-model="item.Tip_VL" v-on:change="index(item, 'two')">
                             <option value="0" disabled selected> Выберите способ прокладки, материал, сечение</option>
                             <option value="1" disabled selected>изолированным проводом:</option>
