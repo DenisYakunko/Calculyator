@@ -512,8 +512,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
     </div>
 	
     <div class="block"
-         v-show="Conditions && VoltageClass !==0  && Build && Calculate == 2 && S1 == 1 ||
-                    S1 == 1 && N>15 && VoltageClass !==0 && Build && Calculate == 2">
+         v-show="Conditions && VoltageClass !==0  && Build && Calculate !== 0 && S1 == 1 ||
+                    S1 == 1 && N>15 && VoltageClass !==0 && Build && Calculate !== 0">
         <div class="source" v-show="Show_BuildTP">
             <div class="in_2 check">
                 <label>

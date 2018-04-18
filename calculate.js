@@ -335,7 +335,7 @@ var app = new Vue({
                             }
 
                             //прячем строительство ТП если класс 6-10
-                            if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
+                    //        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
                     //        if (this.Category == 3) { this.showRadio([1]) }
                     //        if (this.Category == 2) { this.showRadio([9]) }
@@ -355,7 +355,7 @@ var app = new Vue({
                         }
 
                         //прячем строительство ТП если класс 6-10
-                        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
+                    //    if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
                     //    if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6]) }
                     //    if (this.Category == 2) { this.showRadio([9, 10]) }
@@ -365,8 +365,11 @@ var app = new Vue({
                         max = "min150"
    
                         //прячем строительство ТП если класс 6-10
-                        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
+                          if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
+						  if (this.Territory == 2) { this.showRadio([4]) }
+					      if (this.Territory == 1) { this.showRadio([1, 2, 3, 5, 6, 7, 8]) }
+						  
                     //    if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
                     //    if (this.Category == 2) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
                     }
