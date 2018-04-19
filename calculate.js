@@ -292,6 +292,7 @@ var app = new Vue({
         resultPw: function() {
             if (this.j && this.N !== 0) {
                 var x = 0
+				var vr_pw = 0
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
@@ -307,7 +308,15 @@ var app = new Vue({
                 if (this.S1 == 2) {
                     this.Conditions == false
                     this.Build == false
-                }
+                
+								
+				vr_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
+                console.log("временное_мощность", vr_pw)
+				
+				
+				
+				
+				}
 
                 //для любого присоединения
                 if (N > 15) {
@@ -420,9 +429,12 @@ var app = new Vue({
         resultSt: function() {
             if (this.j && this.N !== 0) {
                 var y = 0
+				var vr_st = 0
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
+				var stavka_ps_C_1 = "max15"
+
 
                 //меньше 15 без строительства
                 if (N <= 15 && !this.Conditions && N && this.Category !== 2) {
@@ -435,7 +447,15 @@ var app = new Vue({
                 if (this.S1 == 2) {
                     this.Conditions == false
                     this.Build == false
-                }
+                
+				
+				vr_st = Number(this.j.Price_standart.stavka_ps.C_1)
+                console.log("временное", vr_st)
+				
+				
+				
+				
+				}
 
                 //для любого присоединения
                 if (N > 15) {
