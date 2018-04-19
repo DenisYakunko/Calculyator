@@ -578,8 +578,8 @@ var app = new Vue({
                             //if (e.select == 1) { y += (Number(this.j.Price.city.Ch000) * e.L * e.index) } //пример
                             
 							//ппример расчета (берт значение с "типа линии, надо  со "Способ прокладки")
-                            if (e.select == 1) { y = (Number(this.j.Price_standart.cable.Ch4_1) * e.L) }
-							if (e.select == 2) { y = (Number(this.j.Price_standart.cable.Ch4_2) * e.L) }
+                            if (e.Tip_VL == 2) { y = (Number(this.j.Price_standart.cable.Ch4_1) * e.L) }
+							if (e.Tip_VL == 3) { y = (Number(this.j.Price_standart.cable.Ch4_2) * e.L) }
 console.log("one line=", y)
                         //    if (e.select == 2) { y += (Number(this.j.Standart[max].C2_2) * e.L * e.index) }
                             if (e.select == 3) { y += (Number(this.j.Standart[max].C2_3) * e.L * e.index) }
