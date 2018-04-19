@@ -294,6 +294,7 @@ var app = new Vue({
                 var x = 0
 				var vr_pw = 0
 				var ps_pw = 0
+				var rpunkt_pw = 0
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
@@ -436,6 +437,15 @@ var app = new Vue({
                     if (this.BuildTP && this.Calculate !== 0 && this.VoltageClass !== 2) {
                         x += (Number(this.j.Power[max][this["BuildTP_radio_" + this.Calculate]]) * N)
                     }
+					
+					
+					//строительство Распределительного пункта
+                    if (N > 999 && this.Rasp_punkt) {
+                   
+					rpunkt_pw = (Number(this.j.Price_power.rp.RP))
+                        console.log("Распределительный пункт", rpunkt_pw)
+                    }
+					
                 }
 
                 //если переключились на стандартизированную ставку то обнуляем мощность
@@ -454,7 +464,7 @@ var app = new Vue({
                 var y = 0
 				var vr_st = 0
 				var ps_st = 0
-				var rpunkt = 0
+				var rpunkt_st = 0
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
@@ -668,8 +678,8 @@ var app = new Vue({
 					//строительство Распределительного пункта
                     if (N > 999 && this.Rasp_punkt) {
                    
-					rpunkt = (Number(this.j.Price_standart.rp.RP))
-                        console.log("Распределительный пункт", rpunkt)
+					rpunkt_st = (Number(this.j.Price_standart.rp.RP))
+                        console.log("Распределительный пункт", rpunkt_st)
                     }
 					
                 }
