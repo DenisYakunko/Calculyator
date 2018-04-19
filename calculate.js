@@ -293,6 +293,7 @@ var app = new Vue({
             if (this.j && this.N !== 0) {
                 var x = 0
 				var vr_pw = 0
+				var ps_pw = 0
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
@@ -313,10 +314,32 @@ var app = new Vue({
 				vr_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
                 console.log("временное_мощность", vr_pw)
 				
+				}
 				
+				//для постоянного присоединения с  условиями
+                if (N <= 15 && this.S1 == 1) {
+                    this.Conditions == true
+                //  this.Build == false
+                
 				
+				ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
+                console.log("постоянное_мощность_усл_до_15", ps_pw)
 				
 				}
+                
+				//для постоянного присоединения с  условиями
+                if (N <= 15 && this.S1 == 1) {
+                    this.Conditions == true
+                //  this.Build == false
+                
+				
+				ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
+                console.log("постоянное_мощность_усл_до_15", ps_pw)
+				
+				}
+                
+			
+			
 
                 //для любого присоединения
                 if (N > 15) {
@@ -430,10 +453,11 @@ var app = new Vue({
             if (this.j && this.N !== 0) {
                 var y = 0
 				var vr_st = 0
+				var ps_st = 0
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
-				var stavka_ps_C_1 = "max15"
+
 
 
                 //меньше 15 без строительства
@@ -443,21 +467,44 @@ var app = new Vue({
                     }
                 }
 
-                //для временного присоединения
+                //для временного присоединения с условиями
                 if (this.S1 == 2) {
-                    this.Conditions == false
+                    this.Conditions == true
                     this.Build == false
                 
 				
 				vr_st = Number(this.j.Price_standart.stavka_ps.C_1)
-                console.log("временное_стандарт", vr_st)
-				
-				
-				
+                console.log("временное_стандарт_усл", vr_st)
 				
 				}
 
-                //для любого присоединения
+				
+				//для постоянного присоединения без условий
+                if (N <= 15 && this.S1 == 1) {
+                    this.Conditions == false
+                //  this.Build == false
+                
+				
+				ps_st = 550
+                console.log("постоянное_стандарт_безусл", ps_st)
+				
+				}
+                
+				//для постоянного присоединения с  условиями
+                if (N <= 15 && this.S1 == 1) {
+                    this.Conditions == true
+                //  this.Build == false
+                
+				
+				ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
+                console.log("постоянное_стандарт_усл", ps_st)
+				
+				}
+                
+				
+				
+				
+				//для любого присоединения
                 if (N > 15) {
                     cmax = "max150"
                 }
@@ -530,7 +577,7 @@ var app = new Vue({
                            console.log("строка из data.json", Number(this.j.Price_standart.cable.Ch4_1))
                             //if (e.select == 1) { y += (Number(this.j.Price.city.Ch000) * e.L * e.index) } //пример
                             
-							//ппример расчета
+							//ппример расчета (берт значение с "типа линии, надо  со "Способ прокладки")
                             if (e.select == 1) { y = (Number(this.j.Price_standart.cable.Ch4_1) * e.L) }
 							if (e.select == 2) { y = (Number(this.j.Price_standart.cable.Ch4_2) * e.L) }
 console.log("one line=", y)
