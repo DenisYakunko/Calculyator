@@ -450,7 +450,7 @@ var app = new Vue({
                 
 				
 				vr_st = Number(this.j.Price_standart.stavka_ps.C_1)
-                console.log("временное", vr_st)
+                console.log("временное_стандарт", vr_st)
 				
 				
 				
