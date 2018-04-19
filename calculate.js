@@ -327,14 +327,14 @@ var app = new Vue({
 				
 				}
                 
-				//для постоянного присоединения с  условиями
-                if (N <= 15 && this.S1 == 1) {
+				//для постоянного присоединения от 15 до 150
+                if (N > 15 && N <= 150 && this.S1 == 1) {
                     this.Conditions == true
                 //  this.Build == false
                 
 				
-				ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
-                console.log("постоянное_мощность_усл_до_15", ps_pw)
+				ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_150)
+                console.log("постоянное_мощность_усл_от_15_до_150", ps_pw)
 				
 				}
                 
