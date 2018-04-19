@@ -454,6 +454,7 @@ var app = new Vue({
                 var y = 0
 				var vr_st = 0
 				var ps_st = 0
+				var rpunkt = 0
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
@@ -659,8 +660,18 @@ var app = new Vue({
                     //строительство ТП
                     if (this.BuildTP && this.Calculate !== 0 && this.VoltageClass !== 2) {
                         y += (Number(this.j.Standart[max][this["BuildTP_radio_" + this.Calculate]]) * N * Number(this.j.Z.TP))
+					 
+					// y = (Number(this.Price_standart.tp.TP_1))
                         console.log("buildTP", y)
                     }
+					
+					//строительство Распределительного пункта
+                    if (N > 999 && this.Rasp_punkt) {
+                   
+					rpunkt = (Number(this.j.Price_standart.rp.RP))
+                        console.log("Распределительный пункт", rpunkt)
+                    }
+					
                 }
 
                 if (this.Calculate == 1 && this.Build) { return 0 }
