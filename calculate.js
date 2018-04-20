@@ -317,6 +317,29 @@ var app = new Vue({
 				
 				}
 				
+				//для временного присоединения от 15 до 150
+                if (N > 15 && N <= 150 && this.S1 == 2) {
+                    this.Conditions == true
+                //  this.Build == false
+                
+				
+				ps_pw = N * Number(this.j.Price_power.stavka_vr.C_1_do_150)
+                console.log("временная_мощность_от_15_до_150", ps_pw)
+				
+				}
+				
+				//для временного присоединения более 150
+                if (N > 150 && this.S1 == 2) {
+                    this.Conditions == true
+                //  this.Build == false
+                
+				
+				ps_pw = N * Number(this.j.Price_power.stavka_vr.C_1_vyshe_150)
+                console.log("временная_мощность_выше_150", ps_pw)
+				
+				}
+                
+				
 				//для постоянного присоединения с  условиями
                 if (N <= 15 && this.S1 == 1) {
                     this.Conditions == true
@@ -380,12 +403,12 @@ var app = new Vue({
                     // от 16 до 150
                     if (N > 15 && N <= 150) {
                         max = "max150"
-                        if (this.VoltageClass == 1) {
-                            this.showCheckbox([21, 23, 31, 32, 311])
-                        }
-                        if (this.VoltageClass == 2) {
-                            this.showCheckbox([23, 32])
-                        }
+                    //    if (this.VoltageClass == 1) {
+                    //        this.showCheckbox([21, 23, 31, 32, 311])
+                    //    }
+                    //    if (this.VoltageClass == 2) {
+                    //        this.showCheckbox([23, 32])
+                    //    }
 
                         //прячем строительство ТП если класс 6-10
                     //    if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
