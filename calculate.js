@@ -407,31 +407,92 @@ var app = new Vue({
                     //    if (this.Category == 2) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
                     }
 
-                    /////////////////////////////
+                    ///////////////////////////// РАСЧЕТ Линий по МЩНОСТИ
+                    this.Lines_one.forEach(function(e) {
+                        if (e.L && e.L !== "0" && e.select !== "0") {
+                                                       
+							//расчета для 1-й линии (пока просто выводит значение не складывая надо y +=)
+                            if (e.Tip_VL == 2) { x = (Number(this.j.Price_power.cable.Ch4_1)) }
+							if (e.Tip_VL == 3) { x = (Number(this.j.Price_power.cable.Ch4_2)) }
+							if (e.Tip_VL == 4) { x = (Number(this.j.Price_power.cable.Ch4_3)) }
+							if (e.Tip_VL == 5) { x = (Number(this.j.Price_power.cable.Ch4_4)) }
+							if (e.Tip_VL == 6) { x = (Number(this.j.Price_power.cable.Ch4_5)) }
+							if (e.Tip_VL == 7) { x = (Number(this.j.Price_power.cable.Ch4_6)) }
+							if (e.Tip_VL == 8) { x = (Number(this.j.Price_power.cable.Ch4_7)) }
+							if (e.Tip_VL == 9) { x = (Number(this.j.Price_power.cable.Ch4_8)) }
+							if (e.Tip_VL == 10) { x = (Number(this.j.Price_power.cable.Ch4_9)) }
+							
+							if (e.Tip_VL == 12) { x = (Number(this.j.Price_power.cable.Ch4_10)) }
+							
+							if (e.Tip_VL == 14) { x = (Number(this.j.Price_power.cable.Ch4_11)) }
+							if (e.Tip_VL == 15) { x = (Number(this.j.Price_power.cable.Ch4_12)) }
+							if (e.Tip_VL == 16) { x = (Number(this.j.Price_power.cable.Ch4_13)) }
+							if (e.Tip_VL == 17) { x = (Number(this.j.Price_power.cable.Ch4_14)) }
+							if (e.Tip_VL == 18) { x = (Number(this.j.Price_power.cable.Ch4_15)) }
+							if (e.Tip_VL == 19) { x = (Number(this.j.Price_power.cable.Ch4_16)) }
+							if (e.Tip_VL == 20) { x = (Number(this.j.Price_power.cable.Ch4_17)) }
+							
+							if (e.Tip_VL == 22) { x = (Number(this.j.Price_power.cable.Ch4_18)) }
+							if (e.Tip_VL == 23) { x = (Number(this.j.Price_power.cable.Ch4_19)) }
+							
+							if (e.Tip_VL == 25) { x = (Number(this.j.Price_power.cable.Ch4_20)) }
+							if (e.Tip_VL == 26) { x = (Number(this.j.Price_power.cable.Ch4_21)) }
+							if (e.Tip_VL == 27) { x = (Number(this.j.Price_power.cable.Ch4_22)) }
+							if (e.Tip_VL == 28) { x = (Number(this.j.Price_power.cable.Ch4_23)) }
+							if (e.Tip_VL == 29) { x = (Number(this.j.Price_power.cable.Ch4_24)) }
+							
+							if (e.Tip_VL == 31) { x = (Number(this.j.Price_power.cable.Ch4_25)) }
+							if (e.Tip_VL == 32) { x = (Number(this.j.Price_power.cable.Ch4_26)) }
+							if (e.Tip_VL == 33) { x = (Number(this.j.Price_power.cable.Ch4_27)) }
+							if (e.Tip_VL == 34) { x = (Number(this.j.Price_power.cable.Ch4_28)) }
+							if (e.Tip_VL == 36) { x = (Number(this.j.Price_power.cable.Ch4_29)) }
+							console.log("one line=", x)
 
-                    //первый источник
-                    if (this.Ch2_1 && this.Show_Ch2_1) { x += (Number(this.j.Power[max].Cm2_1) * N) }
-                    if (this.Ch2_2 && this.Show_Ch2_2) { x += (Number(this.j.Power[max].Cm2_2) * N) }
-                    if (this.Ch2_3 && this.Show_Ch2_3) { x += (Number(this.j.Power[max].Cm2_3) * N) }
-                    if (this.Ch2_4 && this.Show_Ch2_4) { x += (Number(this.j.Power[max].Cm2_4) * N) }
+                        }
+                    }, this);
 
-                    if (this.Ch3_1 && this.Show_Ch3_1) { x += (Number(this.j.Power[max].Cm3_1) * N) }
-                    if (this.Ch3_2 && this.Show_Ch3_2) { x += (Number(this.j.Power[max].Cm3_2) * N) }
-                    if (this.Ch3_1_1 && this.Show_Ch3_1_1) { x += (Number(this.j.Power[max].Cm3_1_1) * N) }
-                    if (this.Ch3_2_1 && this.Show_Ch3_2_1) { x += (Number(this.j.Power[max].Cm3_2_1) * N) }
-
-                    if (this.Category == 2) {
-                        //второй источник
-                        if (this.Ch2__2_1 && this.Show_Ch2_1) { x += (Number(this.j.Power[max].Cm2_1) * N) }
-                        if (this.Ch2__2_2 && this.Show_Ch2_2) { x += (Number(this.j.Power[max].Cm2_2) * N) }
-                        if (this.Ch2__2_3 && this.Show_Ch2_3) { x += (Number(this.j.Power[max].Cm2_3) * N) }
-                        if (this.Ch2__2_4 && this.Show_Ch2_4) { x += (Number(this.j.Power[max].Cm2_4) * N) }
-
-                        if (this.Ch2__3_1 && this.Show_Ch3_1) { x += (Number(this.j.Power[max].Cm3_1) * N) }
-                        if (this.Ch2__3_2 && this.Show_Ch3_2) { x += (Number(this.j.Power[max].Cm3_2) * N) }
-                        if (this.Ch2__3_1_1 && this.Show_Ch3_1_1) { x += (Number(this.j.Power[max].Cm3_1_1) * N) }
-                        if (this.Ch2__3_2_1 && this.Show_Ch3_2_1) { x += (Number(this.j.Power[max].Cm3_2_1) * N) }
-                    }
+                    this.Lines_two.forEach(function(e) {
+                        if (e.L && e.L !== "0" && e.select !== "0" && this.Category == 2) {
+                            //первый источник
+                            if (e.Tip_VL == 2) { x = (Number(this.j.Price_power.cable.Ch4_1)) }
+							if (e.Tip_VL == 3) { x = (Number(this.j.Price_power.cable.Ch4_2)) }
+							if (e.Tip_VL == 4) { x = (Number(this.j.Price_power.cable.Ch4_3)) }
+							if (e.Tip_VL == 5) { x = (Number(this.j.Price_power.cable.Ch4_4)) }
+							if (e.Tip_VL == 6) { x = (Number(this.j.Price_power.cable.Ch4_5)) }
+							if (e.Tip_VL == 7) { x = (Number(this.j.Price_power.cable.Ch4_6)) }
+							if (e.Tip_VL == 8) { x = (Number(this.j.Price_power.cable.Ch4_7)) }
+							if (e.Tip_VL == 9) { x = (Number(this.j.Price_power.cable.Ch4_8)) }
+							if (e.Tip_VL == 10) { x = (Number(this.j.Price_power.cable.Ch4_9)) }
+							
+							if (e.Tip_VL == 12) { x = (Number(this.j.Price_power.cable.Ch4_10)) }
+							
+							if (e.Tip_VL == 14) { x = (Number(this.j.Price_power.cable.Ch4_11)) }
+							if (e.Tip_VL == 15) { x = (Number(this.j.Price_power.cable.Ch4_12)) }
+							if (e.Tip_VL == 16) { x = (Number(this.j.Price_power.cable.Ch4_13)) }
+							if (e.Tip_VL == 17) { x = (Number(this.j.Price_power.cable.Ch4_14)) }
+							if (e.Tip_VL == 18) { x = (Number(this.j.Price_power.cable.Ch4_15)) }
+							if (e.Tip_VL == 19) { x = (Number(this.j.Price_power.cable.Ch4_16)) }
+							if (e.Tip_VL == 20) { x = (Number(this.j.Price_power.cable.Ch4_17)) }
+							
+							if (e.Tip_VL == 22) { x = (Number(this.j.Price_power.cable.Ch4_18)) }
+							if (e.Tip_VL == 23) { x = (Number(this.j.Price_power.cable.Ch4_19)) }
+							
+							if (e.Tip_VL == 25) { x = (Number(this.j.Price_power.cable.Ch4_20)) }
+							if (e.Tip_VL == 26) { x = (Number(this.j.Price_power.cable.Ch4_21)) }
+							if (e.Tip_VL == 27) { x = (Number(this.j.Price_power.cable.Ch4_22)) }
+							if (e.Tip_VL == 28) { x = (Number(this.j.Price_power.cable.Ch4_23)) }
+							if (e.Tip_VL == 29) { x = (Number(this.j.Price_power.cable.Ch4_24)) }
+							
+							if (e.Tip_VL == 31) { x = (Number(this.j.Price_power.cable.Ch4_25)) }
+							if (e.Tip_VL == 32) { x = (Number(this.j.Price_power.cable.Ch4_26)) }
+							if (e.Tip_VL == 33) { x = (Number(this.j.Price_power.cable.Ch4_27)) }
+							if (e.Tip_VL == 34) { x = (Number(this.j.Price_power.cable.Ch4_28)) }
+							if (e.Tip_VL == 36) { x = (Number(this.j.Price_power.cable.Ch4_29)) }
+							
+                            console.log("two line=", x)
+                        }
+                    }, this);
+                    
 
                     //строительство ТП
                     if (this.BuildTP && this.Calculate !== 0 && this.VoltageClass !== 2) {

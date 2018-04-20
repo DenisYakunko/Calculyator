@@ -506,6 +506,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         <span class="jq-checkbox" :class="{ checked: Rasp_punkt }"></span> Распределительный пункт
                     </label>
                 </p>
+				<p></p>
             </div>
 
 		</div>
