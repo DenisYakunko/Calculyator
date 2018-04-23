@@ -315,6 +315,7 @@ var app = new Vue({
 				vr_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
                 console.log("временное_мощность", vr_pw)
 				
+				x = vr_pw
 				}
 				
 				//для временного присоединения от 15 до 150
@@ -374,7 +375,7 @@ var app = new Vue({
             //    }
 
                 //расчетная часть без строительства
-                x = N * Number(this.j.C1[cmax])
+             //   x = N * Number(this.j.C1[cmax])
 
                 //Строительство
                 if (this.Build && this.S1 !== 2) {
@@ -531,7 +532,7 @@ var app = new Vue({
                     }
 					
                 }
-
+console.log("X", x)
                 //если переключились на стандартизированную ставку то обнуляем мощность
                 if (this.Calculate == 2 && this.Build) { return 0 }
 
