@@ -556,6 +556,7 @@ console.log("X", x)
                 var y = 0
 				var vr_st = 0
 				var ps_st = 0
+				var ps_st_vyshe_150 = 0
 				var rpunkt_st = 0
 				var build_st = 0
                 var N = Number(this.N)
@@ -678,6 +679,10 @@ console.log("X", x)
                     //        this.showCheckbox([23, 24, 32, 321])
                     //    }
 
+						ps_st_vyshe_150 = Number(this.j.Price_standart.stavka_ps.C_1)
+						console.log("постоянное_стандарт_выше_150", ps_st_vyshe_150)
+						y = ps_st
+					
                         //прячем строительство ТП если класс 6-10
                         if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
