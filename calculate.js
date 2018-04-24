@@ -312,10 +312,10 @@ var app = new Vue({
                     this.Build == false
                 
 								
-				vr_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
-                console.log("временное_мощность", vr_pw)
+					vr_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
+					console.log("временное_мощность", vr_pw)
 				
-				x = vr_pw
+					x = vr_pw
 				}
 				
 				//для временного присоединения от 15 до 150
@@ -324,8 +324,10 @@ var app = new Vue({
                 //  this.Build == false
                 
 				
-				ps_pw = N * Number(this.j.Price_power.stavka_vr.C_1_do_150)
-                console.log("временная_мощность_от_15_до_150", ps_pw)
+					ps_pw = N * Number(this.j.Price_power.stavka_vr.C_1_do_150)
+					console.log("временная_мощность_от_15_до_150", ps_pw)
+				
+					x = ps_pw
 				
 				}
 				
@@ -335,8 +337,10 @@ var app = new Vue({
                 //  this.Build == false
                 
 				
-				ps_pw = N * Number(this.j.Price_power.stavka_vr.C_1_vyshe_150)
-                console.log("временная_мощность_выше_150", ps_pw)
+					ps_pw = N * Number(this.j.Price_power.stavka_vr.C_1_vyshe_150)
+					console.log("временная_мощность_выше_150", ps_pw)
+					
+					x = ps_pw
 				
 				}
                 
@@ -572,7 +576,7 @@ console.log("X", x)
 				
 				vr_st = Number(this.j.Price_standart.stavka_ps.C_1)
                 console.log("временное_стандарт_усл", vr_st)
-				
+				y = vr_st
 				}
 
 				
@@ -619,8 +623,8 @@ console.log("X", x)
                 }
 
                 //расчетная часть без строительства
-                y = N * Number(this.j.C1[cmax])
-                console.log("черновик", y)
+            //    y = N * Number(this.j.C1[cmax])
+            //    console.log("черновик", y)
                 //Строительство
                 if (this.Build && this.Calculate == 2) {
                     if (N <= 15) {
@@ -790,7 +794,7 @@ console.log("X", x)
                 }
 
                 if (this.Calculate == 1 && this.Build) { return 0 }
-
+console.log("Y", y)
                 return this.result(y)
             } else {
                 return 0
