@@ -351,9 +351,10 @@ var app = new Vue({
                 //  this.Build == false
                 
 				
-				ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
-                console.log("постоянное_мощность_усл_до_15", ps_pw)
+					ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
+					console.log("постоянное_мощность_усл_до_15", ps_pw)
 				
+					x = ps_pw
 				}
                 
 				//для постоянного присоединения от 15 до 150
@@ -362,8 +363,10 @@ var app = new Vue({
                 //  this.Build == false
                 
 				
-				ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_150)
-                console.log("постоянное_мощность_усл_от_15_до_150", ps_pw)
+					ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_150)
+					console.log("постоянное_мощность_усл_от_15_до_150", ps_pw)
+				
+					x = ps_pw
 				
 				}
                 
@@ -574,9 +577,9 @@ console.log("X", x)
                     this.Build == false
                 
 				
-				vr_st = Number(this.j.Price_standart.stavka_ps.C_1)
-                console.log("временное_стандарт_усл", vr_st)
-				y = vr_st
+					vr_st = Number(this.j.Price_standart.stavka_ps.C_1)
+					console.log("временное_стандарт_усл", vr_st)
+					y = vr_st
 				}
 
 				
@@ -586,8 +589,8 @@ console.log("X", x)
                 //  this.Build == false
                 
 				
-				ps_st = 550
-                console.log("постоянное_стандарт_безусл", ps_st)
+					ps_st = 550
+					console.log("постоянное_стандарт_безусл", ps_st)
 				
 				}
                 
@@ -597,8 +600,9 @@ console.log("X", x)
                 //  this.Build == false
                 
 				
-				ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
-                console.log("постоянное_стандарт_усл", ps_st)
+					ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
+					console.log("постоянное_стандарт_усл", ps_st)
+					y = ps_st
 				
 				}
                 
@@ -608,8 +612,9 @@ console.log("X", x)
                 //  this.Build == false
                 
 				
-				ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
-                console.log("постоянное_стандарт_усл_от_15_до_150", ps_st)
+					ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
+					console.log("постоянное_стандарт_усл_от_15_до_150", ps_st)
+					y = ps_st
 				
 				}				
 				
@@ -650,12 +655,12 @@ console.log("X", x)
                     // от 16 до 150
                     if (N > 15 && N <= 150) {
                         max = "max150"
-                        if (this.VoltageClass == 1) {
-                            this.showCheckbox([21, 22, 23, 24, 31, 32, 311])
-                        }
-                        if (this.VoltageClass == 2) {
-                            this.showCheckbox([23, 24, 32])
-                        }
+                    //    if (this.VoltageClass == 1) {
+                    //        this.showCheckbox([21, 22, 23, 24, 31, 32, 311])
+                    //    }
+                    //    if (this.VoltageClass == 2) {
+                    //        this.showCheckbox([23, 24, 32])
+                    //    }
 
                         //прячем строительство ТП если класс 6-10
                         if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
