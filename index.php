@@ -646,11 +646,11 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
         <div class="result">
             <p>Результаты:</p>
             <div class="total">
-                <div class="wr_score">
+                <div class="wr_score" v-show="Calculate == 1">
                     <p>Итог по ставке за максимальную мощность (руб. с НДС)</p>
                     <p class="score">{{resultPw}} руб.</p>
                 </div>
-                <div class="wr_score">
+                <div class="wr_score" v-show="Calculate == 2">
                     <p>Итог по стандартизированной ставке (руб. с НДС)</p>
                     <p class="score">{{resultSt}} руб.</p>
                 </div>
