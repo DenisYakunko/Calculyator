@@ -410,7 +410,7 @@ var app = new Vue({
 
                     // от 16 до 150
                     if (N > 15 && N <= 150) {
-                        max = "max150"
+                    //    max = "max150"
                     //    if (this.VoltageClass == 1) {
                     //        this.showCheckbox([21, 23, 31, 32, 311])
                     //    }
@@ -426,7 +426,7 @@ var app = new Vue({
                     }
 
                     if (N > 150) {
-                        max = "min150"
+                    //    max = "min150"
    
                         //прячем строительство ТП если класс 6-10
                           if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
@@ -633,24 +633,24 @@ console.log("X", x)
                 //Строительство
                 if (this.Build && this.Calculate == 2) {
                     if (N <= 15) {
-                        max = "max150"
-                        if (this.Conditions || this.Category !== 2) {
-                            if (this.VoltageClass == 1) {
-                                this.showCheckbox([21, 22, 23, 24, 31, 32, 311])
-                            }
-                            if (this.VoltageClass == 2) {
-                                this.showCheckbox([23, 24, 32])
-                            }
+                     //   max = "max150"
+                    //    if (this.Conditions || this.Category !== 2) {
+                     //       if (this.VoltageClass == 1) {
+                    //            this.showCheckbox([21, 22, 23, 24, 31, 32, 311])
+                    //        }
+                    //        if (this.VoltageClass == 2) {
+                    //            this.showCheckbox([23, 24, 32])
+                    //        }
 
                             //прячем строительство ТП если класс 6-10
-                            if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
+                        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
                      //       if (this.Category == 3) { this.showRadio([1]) }
                      //       if (this.Category == 2) { this.showRadio([1]) }
                         } else {
                             return 550
                         }
-                    }
+                    
 
                     // от 16 до 150
                     if (N > 15 && N <= 150) {
