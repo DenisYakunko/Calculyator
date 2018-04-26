@@ -385,25 +385,25 @@ var app = new Vue({
                 if (this.Build && this.S1 !== 2) {
                     //для постоянного присоединения
                     // до 15
-                //    if (N <= 15) {
-                //        max = "max150"
-                    //    if (this.Conditions || this.Category !== 2) {
-                    //        if (this.VoltageClass == 1) {
-                    //            this.showCheckbox([21, 23, 31, 32, 311])
-                    //        }
-                    //        if (this.VoltageClass == 2) {
-                    //            this.showCheckbox([23, 32])
-                //            }
+                    if (N <= 15) {
+                        max = "max150"
+                        if (this.Conditions || this.Category !== 2) {
+                            if (this.VoltageClass == 1) {
+                                this.showCheckbox([21, 23, 31, 32, 311])
+                            }
+                            if (this.VoltageClass == 2) {
+                                this.showCheckbox([23, 32])
+                            }
 
                             //прячем строительство ТП если класс 6-10
                     //        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
                     //        if (this.Category == 3) { this.showRadio([1]) }
                     //        if (this.Category == 2) { this.showRadio([9]) }
-                //        } else {
-                //            return 550
-                //        }
-                //    }
+                        } else {
+                            return 550
+                        }
+                    }
 
                     // от 16 до 150
                     if (N > 15 && N <= 150) {
@@ -555,7 +555,6 @@ console.log("X", x)
 				var ps_st = 0
 				var ps_st_vyshe_150 = 0
 				var rpunkt_st = 0
-				var build_st = 0
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
@@ -603,16 +602,7 @@ console.log("X", x)
 				
 				}
                 
-				//для постоянного присоединения от 15 до 150
-                if (N > 15 && N <= 150 && this.S1 == 1) {
-                    this.Conditions == true
-                //  this.Build == false
-                
 				
-				ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
-                console.log("постоянное_стандарт_усл_от_15_до_150", ps_st)
-				
-				}				
 				
 				
 				//для любого присоединения
@@ -772,21 +762,11 @@ console.log("X", x)
                     }, this);
 
                     //строительство ТП
-                  if (this.BuildTP && this.Calculate !== 0 && this.VoltageClass !== 2) {
-                 //        y += (Number(this.j.Standart[max][this["BuildTP_radio_" + this.Calculate]]) * N)
-					
-						if (this.radio1 = true) { build_st = (Number(this.j.Price_standart.tp.TP_1) )}
-						if (this.radio2 = true) { build_st = (Number(this.j.Price_standart.tp.TP_2) )}
-						if (this.radio3) { build_st = (Number(this.j.Price_standart.tp.TP_3) )}
-						if (this.radio4) { build_st = (Number(this.j.Price_standart.tp.TP_4) )}
-						if (this.radio5) { build_st = (Number(this.j.Price_standart.tp.TP_5) )}
-						if (this.radio6) { build_st = (Number(this.j.Price_standart.tp.TP_6) )}
-						if (this.radio7) { build_st = (Number(this.j.Price_standart.tp.TP_7) )}
-					//	if (this.radio8) { build_st = (Number(this.j.Price_standart.tp.TP_8) )}	
-						
+                    if (this.BuildTP && this.Calculate !== 0 && this.VoltageClass !== 2) {
+                        y += (Number(this.j.Standart[max][this["BuildTP_radio_" + this.Calculate]]) * N * Number(this.j.Z.TP))
+					 
 					// y = (Number(this.Price_standart.tp.TP_1))
                         console.log("buildTP", y)
-						console.log("build_st", build_st)
                     }
 					
 					//строительство Распределительного пункта
