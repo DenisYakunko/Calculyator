@@ -412,7 +412,7 @@ var app = new Vue({
                 //    }
 
                     // от 16 до 150
-                    if (N > 15 && N <= 150) {
+                //    if (N > 15 && N <= 150) {
                     //    max = "max150"
                     //    if (this.VoltageClass == 1) {
                     //        this.showCheckbox([21, 23, 31, 32, 311])
@@ -426,7 +426,7 @@ var app = new Vue({
 
                     //    if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6]) }
                     //    if (this.Category == 2) { this.showRadio([9, 10]) }
-                    }
+                //    }
 
                     if (N > 150) {
                     //    max = "min150"
@@ -448,40 +448,40 @@ var app = new Vue({
                         if (e.L && e.L !== "0" && e.select !== "0") {
                                                        
 							//расчета для 1-й линии (пока просто выводит значение не складывая надо y +=)
-                            if (e.Tip_VL == 2) { x = (Number(this.j.Price_power.cable.Ch4_1)) }
-							if (e.Tip_VL == 3) { x = (Number(this.j.Price_power.cable.Ch4_2)) }
-							if (e.Tip_VL == 4) { x = (Number(this.j.Price_power.cable.Ch4_3)) }
-							if (e.Tip_VL == 5) { x = (Number(this.j.Price_power.cable.Ch4_4)) }
-							if (e.Tip_VL == 6) { x = (Number(this.j.Price_power.cable.Ch4_5)) }
-							if (e.Tip_VL == 7) { x = (Number(this.j.Price_power.cable.Ch4_6)) }
-							if (e.Tip_VL == 8) { x = (Number(this.j.Price_power.cable.Ch4_7)) }
-							if (e.Tip_VL == 9) { x = (Number(this.j.Price_power.cable.Ch4_8)) }
-							if (e.Tip_VL == 10) { x = (Number(this.j.Price_power.cable.Ch4_9)) }
+                            if (e.Tip_VL == 2) { x += (Number(this.j.Price_power.cable.Ch4_1)) }
+							if (e.Tip_VL == 3) { x += (Number(this.j.Price_power.cable.Ch4_2)) }
+							if (e.Tip_VL == 4) { x += (Number(this.j.Price_power.cable.Ch4_3)) }
+							if (e.Tip_VL == 5) { x += (Number(this.j.Price_power.cable.Ch4_4)) }
+							if (e.Tip_VL == 6) { x += (Number(this.j.Price_power.cable.Ch4_5)) }
+							if (e.Tip_VL == 7) { x += (Number(this.j.Price_power.cable.Ch4_6)) }
+							if (e.Tip_VL == 8) { x += (Number(this.j.Price_power.cable.Ch4_7)) }
+							if (e.Tip_VL == 9) { x += (Number(this.j.Price_power.cable.Ch4_8)) }
+							if (e.Tip_VL == 10) { x += (Number(this.j.Price_power.cable.Ch4_9)) }
 							
-							if (e.Tip_VL == 12) { x = (Number(this.j.Price_power.cable.Ch4_10)) }
+							if (e.Tip_VL == 12) { x += (Number(this.j.Price_power.cable.Ch4_10)) }
 							
-							if (e.Tip_VL == 14) { x = (Number(this.j.Price_power.cable.Ch4_11)) }
-							if (e.Tip_VL == 15) { x = (Number(this.j.Price_power.cable.Ch4_12)) }
-							if (e.Tip_VL == 16) { x = (Number(this.j.Price_power.cable.Ch4_13)) }
-							if (e.Tip_VL == 17) { x = (Number(this.j.Price_power.cable.Ch4_14)) }
-							if (e.Tip_VL == 18) { x = (Number(this.j.Price_power.cable.Ch4_15)) }
-							if (e.Tip_VL == 19) { x = (Number(this.j.Price_power.cable.Ch4_16)) }
-							if (e.Tip_VL == 20) { x = (Number(this.j.Price_power.cable.Ch4_17)) }
+							if (e.Tip_VL == 14) { x += (Number(this.j.Price_power.cable.Ch4_11)) }
+							if (e.Tip_VL == 15) { x += (Number(this.j.Price_power.cable.Ch4_12)) }
+							if (e.Tip_VL == 16) { x += (Number(this.j.Price_power.cable.Ch4_13)) }
+							if (e.Tip_VL == 17) { x += (Number(this.j.Price_power.cable.Ch4_14)) }
+							if (e.Tip_VL == 18) { x += (Number(this.j.Price_power.cable.Ch4_15)) }
+							if (e.Tip_VL == 19) { x += (Number(this.j.Price_power.cable.Ch4_16)) }
+							if (e.Tip_VL == 20) { x += (Number(this.j.Price_power.cable.Ch4_17)) }
 							
-							if (e.Tip_VL == 22) { x = (Number(this.j.Price_power.cable.Ch4_18)) }
-							if (e.Tip_VL == 23) { x = (Number(this.j.Price_power.cable.Ch4_19)) }
+							if (e.Tip_VL == 22) { x += (Number(this.j.Price_power.cable.Ch4_18)) }
+							if (e.Tip_VL == 23) { x += (Number(this.j.Price_power.cable.Ch4_19)) }
 							
-							if (e.Tip_VL == 25) { x = (Number(this.j.Price_power.cable.Ch4_20)) }
-							if (e.Tip_VL == 26) { x = (Number(this.j.Price_power.cable.Ch4_21)) }
-							if (e.Tip_VL == 27) { x = (Number(this.j.Price_power.cable.Ch4_22)) }
-							if (e.Tip_VL == 28) { x = (Number(this.j.Price_power.cable.Ch4_23)) }
-							if (e.Tip_VL == 29) { x = (Number(this.j.Price_power.cable.Ch4_24)) }
+							if (e.Tip_VL == 25) { x += (Number(this.j.Price_power.cable.Ch4_20)) }
+							if (e.Tip_VL == 26) { x += (Number(this.j.Price_power.cable.Ch4_21)) }
+							if (e.Tip_VL == 27) { x += (Number(this.j.Price_power.cable.Ch4_22)) }
+							if (e.Tip_VL == 28) { x += (Number(this.j.Price_power.cable.Ch4_23)) }
+							if (e.Tip_VL == 29) { x += (Number(this.j.Price_power.cable.Ch4_24)) }
 							
-							if (e.Tip_VL == 31) { x = (Number(this.j.Price_power.cable.Ch4_25)) }
-							if (e.Tip_VL == 32) { x = (Number(this.j.Price_power.cable.Ch4_26)) }
-							if (e.Tip_VL == 33) { x = (Number(this.j.Price_power.cable.Ch4_27)) }
-							if (e.Tip_VL == 34) { x = (Number(this.j.Price_power.cable.Ch4_28)) }
-							if (e.Tip_VL == 36) { x = (Number(this.j.Price_power.cable.Ch4_29)) }
+							if (e.Tip_VL == 31) { x += (Number(this.j.Price_power.cable.Ch4_25)) }
+							if (e.Tip_VL == 32) { x += (Number(this.j.Price_power.cable.Ch4_26)) }
+							if (e.Tip_VL == 33) { x += (Number(this.j.Price_power.cable.Ch4_27)) }
+							if (e.Tip_VL == 34) { x += (Number(this.j.Price_power.cable.Ch4_28)) }
+							if (e.Tip_VL == 36) { x += (Number(this.j.Price_power.cable.Ch4_29)) }
 							console.log("one line=", x)
 
                         }
@@ -490,40 +490,40 @@ var app = new Vue({
                     this.Lines_two.forEach(function(e) {
                         if (e.L && e.L !== "0" && e.select !== "0" && this.Category == 2) {
                             //первый источник
-                            if (e.Tip_VL == 2) { x = (Number(this.j.Price_power.cable.Ch4_1)) }
-							if (e.Tip_VL == 3) { x = (Number(this.j.Price_power.cable.Ch4_2)) }
-							if (e.Tip_VL == 4) { x = (Number(this.j.Price_power.cable.Ch4_3)) }
-							if (e.Tip_VL == 5) { x = (Number(this.j.Price_power.cable.Ch4_4)) }
-							if (e.Tip_VL == 6) { x = (Number(this.j.Price_power.cable.Ch4_5)) }
-							if (e.Tip_VL == 7) { x = (Number(this.j.Price_power.cable.Ch4_6)) }
-							if (e.Tip_VL == 8) { x = (Number(this.j.Price_power.cable.Ch4_7)) }
-							if (e.Tip_VL == 9) { x = (Number(this.j.Price_power.cable.Ch4_8)) }
-							if (e.Tip_VL == 10) { x = (Number(this.j.Price_power.cable.Ch4_9)) }
+                            if (e.Tip_VL == 2) { x += (Number(this.j.Price_power.cable.Ch4_1)) }
+							if (e.Tip_VL == 3) { x += (Number(this.j.Price_power.cable.Ch4_2)) }
+							if (e.Tip_VL == 4) { x += (Number(this.j.Price_power.cable.Ch4_3)) }
+							if (e.Tip_VL == 5) { x += (Number(this.j.Price_power.cable.Ch4_4)) }
+							if (e.Tip_VL == 6) { x += (Number(this.j.Price_power.cable.Ch4_5)) }
+							if (e.Tip_VL == 7) { x += (Number(this.j.Price_power.cable.Ch4_6)) }
+							if (e.Tip_VL == 8) { x += (Number(this.j.Price_power.cable.Ch4_7)) }
+							if (e.Tip_VL == 9) { x += (Number(this.j.Price_power.cable.Ch4_8)) }
+							if (e.Tip_VL == 10) { x += (Number(this.j.Price_power.cable.Ch4_9)) }
 							
-							if (e.Tip_VL == 12) { x = (Number(this.j.Price_power.cable.Ch4_10)) }
+							if (e.Tip_VL == 12) { x += (Number(this.j.Price_power.cable.Ch4_10)) }
 							
-							if (e.Tip_VL == 14) { x = (Number(this.j.Price_power.cable.Ch4_11)) }
-							if (e.Tip_VL == 15) { x = (Number(this.j.Price_power.cable.Ch4_12)) }
-							if (e.Tip_VL == 16) { x = (Number(this.j.Price_power.cable.Ch4_13)) }
-							if (e.Tip_VL == 17) { x = (Number(this.j.Price_power.cable.Ch4_14)) }
-							if (e.Tip_VL == 18) { x = (Number(this.j.Price_power.cable.Ch4_15)) }
-							if (e.Tip_VL == 19) { x = (Number(this.j.Price_power.cable.Ch4_16)) }
-							if (e.Tip_VL == 20) { x = (Number(this.j.Price_power.cable.Ch4_17)) }
+							if (e.Tip_VL == 14) { x += (Number(this.j.Price_power.cable.Ch4_11)) }
+							if (e.Tip_VL == 15) { x += (Number(this.j.Price_power.cable.Ch4_12)) }
+							if (e.Tip_VL == 16) { x += (Number(this.j.Price_power.cable.Ch4_13)) }
+							if (e.Tip_VL == 17) { x += (Number(this.j.Price_power.cable.Ch4_14)) }
+							if (e.Tip_VL == 18) { x += (Number(this.j.Price_power.cable.Ch4_15)) }
+							if (e.Tip_VL == 19) { x += (Number(this.j.Price_power.cable.Ch4_16)) }
+							if (e.Tip_VL == 20) { x += (Number(this.j.Price_power.cable.Ch4_17)) }
 							
-							if (e.Tip_VL == 22) { x = (Number(this.j.Price_power.cable.Ch4_18)) }
-							if (e.Tip_VL == 23) { x = (Number(this.j.Price_power.cable.Ch4_19)) }
+							if (e.Tip_VL == 22) { x += (Number(this.j.Price_power.cable.Ch4_18)) }
+							if (e.Tip_VL == 23) { x += (Number(this.j.Price_power.cable.Ch4_19)) }
 							
-							if (e.Tip_VL == 25) { x = (Number(this.j.Price_power.cable.Ch4_20)) }
-							if (e.Tip_VL == 26) { x = (Number(this.j.Price_power.cable.Ch4_21)) }
-							if (e.Tip_VL == 27) { x = (Number(this.j.Price_power.cable.Ch4_22)) }
-							if (e.Tip_VL == 28) { x = (Number(this.j.Price_power.cable.Ch4_23)) }
-							if (e.Tip_VL == 29) { x = (Number(this.j.Price_power.cable.Ch4_24)) }
+							if (e.Tip_VL == 25) { x += (Number(this.j.Price_power.cable.Ch4_20)) }
+							if (e.Tip_VL == 26) { x += (Number(this.j.Price_power.cable.Ch4_21)) }
+							if (e.Tip_VL == 27) { x += (Number(this.j.Price_power.cable.Ch4_22)) }
+							if (e.Tip_VL == 28) { x += (Number(this.j.Price_power.cable.Ch4_23)) }
+							if (e.Tip_VL == 29) { x += (Number(this.j.Price_power.cable.Ch4_24)) }
 							
-							if (e.Tip_VL == 31) { x = (Number(this.j.Price_power.cable.Ch4_25)) }
-							if (e.Tip_VL == 32) { x = (Number(this.j.Price_power.cable.Ch4_26)) }
-							if (e.Tip_VL == 33) { x = (Number(this.j.Price_power.cable.Ch4_27)) }
-							if (e.Tip_VL == 34) { x = (Number(this.j.Price_power.cable.Ch4_28)) }
-							if (e.Tip_VL == 36) { x = (Number(this.j.Price_power.cable.Ch4_29)) }
+							if (e.Tip_VL == 31) { x += (Number(this.j.Price_power.cable.Ch4_25)) }
+							if (e.Tip_VL == 32) { x += (Number(this.j.Price_power.cable.Ch4_26)) }
+							if (e.Tip_VL == 33) { x += (Number(this.j.Price_power.cable.Ch4_27)) }
+							if (e.Tip_VL == 34) { x += (Number(this.j.Price_power.cable.Ch4_28)) }
+							if (e.Tip_VL == 36) { x += (Number(this.j.Price_power.cable.Ch4_29)) }
 							
                             console.log("two line=", x)
                         }
@@ -535,14 +535,14 @@ var app = new Vue({
                     //    x += (Number(this.j.Power[max][this["BuildTP_radio_" + this.Calculate]]) * N)
                         console.log("buildTP", x)						
 						
-						if (this.BuildTP_radio_2 == "C4_1") { build_pw = (Number(this.j.Price_power.tp.TP_1) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
-						if (this.BuildTP_radio_2 == "C4_2") { build_pw = (Number(this.j.Price_power.tp.TP_2) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
-						if (this.BuildTP_radio_2 == "C4_3") { build_pw = (Number(this.j.Price_power.tp.TP_3) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
-						if (this.BuildTP_radio_2 == "C4_4") { build_pw = (Number(this.j.Price_power.tp.TP_8) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
-						if (this.BuildTP_radio_2 == "C4_8") { build_pw = (Number(this.j.Price_power.tp.TP_4) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
-						if (this.BuildTP_radio_2 == "C4_9") { build_pw = (Number(this.j.Price_power.tp.TP_5) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
-						if (this.BuildTP_radio_2 == "C4_10") { build_pw = (Number(this.j.Price_power.tp.TP_6) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
-						if (this.BuildTP_radio_2 == "C4_11") { build_pw = (Number(this.j.Price_power.tp.TP_7) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}	
+						if (this.BuildTP_radio_2 == "C4_1") { build_pw = (Number(this.j.Price_power.tp.TP_1) * N)}
+						if (this.BuildTP_radio_2 == "C4_2") { build_pw = (Number(this.j.Price_power.tp.TP_2) * N)}
+						if (this.BuildTP_radio_2 == "C4_3") { build_pw = (Number(this.j.Price_power.tp.TP_3) * N)}
+						if (this.BuildTP_radio_2 == "C4_4") { build_pw = (Number(this.j.Price_power.tp.TP_8) * N)}
+						if (this.BuildTP_radio_2 == "C4_8") { build_pw = (Number(this.j.Price_power.tp.TP_4) * N)}
+						if (this.BuildTP_radio_2 == "C4_9") { build_pw = (Number(this.j.Price_power.tp.TP_5) * N)}
+						if (this.BuildTP_radio_2 == "C4_10") { build_pw = (Number(this.j.Price_power.tp.TP_6) * N)}
+						if (this.BuildTP_radio_2 == "C4_11") { build_pw = (Number(this.j.Price_power.tp.TP_7) * N)}	
 
 
 						
@@ -588,6 +588,7 @@ console.log("X", x)
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
+				var temp = 0
 
 
 
@@ -659,7 +660,11 @@ console.log("X", x)
             //    console.log("черновик", y)
                 //Строительство
                 if (this.Build && this.Calculate == 2) {
-                    if (N <= 15) {
+					
+					temp = 5
+					console.log("проверка стандарт стройка", temp)
+					
+                //    if (N <= 15) {
                      //   max = "max150"
                     //    if (this.Conditions || this.Category !== 2) {
                      //       if (this.VoltageClass == 1) {
@@ -670,18 +675,19 @@ console.log("X", x)
                     //        }
 
                             //прячем строительство ТП если класс 6-10
-                        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
+                //        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
                      //       if (this.Category == 3) { this.showRadio([1]) }
                      //       if (this.Category == 2) { this.showRadio([1]) }
-                        } else {
-                            return 550
-                        }
+                //        } else {
+                //            return 550
+                //        }
                     
 
                     // от 16 до 150
-                    if (N > 15 && N <= 150) {
-                        max = "max150"
+                //    if (N > 15 && N <= 150) {
+                //        max = "max150"
+				//		temp = 25
                     //    if (this.VoltageClass == 1) {
                     //        this.showCheckbox([21, 22, 23, 24, 31, 32, 311])
                     //    }
@@ -690,14 +696,16 @@ console.log("X", x)
                     //    }
 
                         //прячем строительство ТП если класс 6-10
-                        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
+                //        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
                     //    if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6]) }
                     //    if (this.Category == 2) { this.showRadio([9, 10]) }
-                    }
+                //    }
 
                     if (N > 150) {
                         max = "min150"
+						temp = 555
+						console.log("проверка стандарт стройка", temp)
                     //    if (this.VoltageClass == 1) {
                     //        this.showCheckbox([22, 23, 24, 31, 32, 321])
                     //    }
@@ -707,7 +715,7 @@ console.log("X", x)
 
 						ps_st_vyshe_150 = Number(this.j.Price_standart.stavka_ps.C_1)
 						console.log("постоянное_стандарт_выше_150", ps_st_vyshe_150)
-						y = ps_st
+						y = ps_st_vyshe_150
 					
                         //прячем строительство ТП если класс 6-10
                         if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
@@ -721,40 +729,40 @@ console.log("X", x)
                         if (e.L && e.L !== "0" && e.select !== "0") {
                                                        
 							//расчета для 1-й линии (пока просто выводит значение не складывая надо y +=)
-                            if (e.Tip_VL == 2) { y = (Number(this.j.Price_standart.cable.Ch4_1) * e.L) }
-							if (e.Tip_VL == 3) { y = (Number(this.j.Price_standart.cable.Ch4_2) * e.L) }
-							if (e.Tip_VL == 4) { y = (Number(this.j.Price_standart.cable.Ch4_3) * e.L) }
-							if (e.Tip_VL == 5) { y = (Number(this.j.Price_standart.cable.Ch4_4) * e.L) }
-							if (e.Tip_VL == 6) { y = (Number(this.j.Price_standart.cable.Ch4_5) * e.L) }
-							if (e.Tip_VL == 7) { y = (Number(this.j.Price_standart.cable.Ch4_6) * e.L) }
-							if (e.Tip_VL == 8) { y = (Number(this.j.Price_standart.cable.Ch4_7) * e.L) }
-							if (e.Tip_VL == 9) { y = (Number(this.j.Price_standart.cable.Ch4_8) * e.L) }
-							if (e.Tip_VL == 10) { y = (Number(this.j.Price_standart.cable.Ch4_9) * e.L) }
+                            if (e.Tip_VL == 2) { y += (Number(this.j.Price_standart.cable.Ch4_1) * e.L) }
+							if (e.Tip_VL == 3) { y += (Number(this.j.Price_standart.cable.Ch4_2) * e.L) }
+							if (e.Tip_VL == 4) { y += (Number(this.j.Price_standart.cable.Ch4_3) * e.L) }
+							if (e.Tip_VL == 5) { y += (Number(this.j.Price_standart.cable.Ch4_4) * e.L) }
+							if (e.Tip_VL == 6) { y += (Number(this.j.Price_standart.cable.Ch4_5) * e.L) }
+							if (e.Tip_VL == 7) { y += (Number(this.j.Price_standart.cable.Ch4_6) * e.L) }
+							if (e.Tip_VL == 8) { y += (Number(this.j.Price_standart.cable.Ch4_7) * e.L) }
+							if (e.Tip_VL == 9) { y += (Number(this.j.Price_standart.cable.Ch4_8) * e.L) }
+							if (e.Tip_VL == 10) { y += (Number(this.j.Price_standart.cable.Ch4_9) * e.L) }
 							
-							if (e.Tip_VL == 12) { y = (Number(this.j.Price_standart.cable.Ch4_10) * e.L) }
+							if (e.Tip_VL == 12) { y += (Number(this.j.Price_standart.cable.Ch4_10) * e.L) }
 							
-							if (e.Tip_VL == 14) { y = (Number(this.j.Price_standart.cable.Ch4_11) * e.L) }
-							if (e.Tip_VL == 15) { y = (Number(this.j.Price_standart.cable.Ch4_12) * e.L) }
-							if (e.Tip_VL == 16) { y = (Number(this.j.Price_standart.cable.Ch4_13) * e.L) }
-							if (e.Tip_VL == 17) { y = (Number(this.j.Price_standart.cable.Ch4_14) * e.L) }
-							if (e.Tip_VL == 18) { y = (Number(this.j.Price_standart.cable.Ch4_15) * e.L) }
-							if (e.Tip_VL == 19) { y = (Number(this.j.Price_standart.cable.Ch4_16) * e.L) }
-							if (e.Tip_VL == 20) { y = (Number(this.j.Price_standart.cable.Ch4_17) * e.L) }
+							if (e.Tip_VL == 14) { y += (Number(this.j.Price_standart.cable.Ch4_11) * e.L) }
+							if (e.Tip_VL == 15) { y += (Number(this.j.Price_standart.cable.Ch4_12) * e.L) }
+							if (e.Tip_VL == 16) { y += (Number(this.j.Price_standart.cable.Ch4_13) * e.L) }
+							if (e.Tip_VL == 17) { y += (Number(this.j.Price_standart.cable.Ch4_14) * e.L) }
+							if (e.Tip_VL == 18) { y += (Number(this.j.Price_standart.cable.Ch4_15) * e.L) }
+							if (e.Tip_VL == 19) { y += (Number(this.j.Price_standart.cable.Ch4_16) * e.L) }
+							if (e.Tip_VL == 20) { y += (Number(this.j.Price_standart.cable.Ch4_17) * e.L) }
 							
-							if (e.Tip_VL == 22) { y = (Number(this.j.Price_standart.cable.Ch4_18) * e.L) }
-							if (e.Tip_VL == 23) { y = (Number(this.j.Price_standart.cable.Ch4_19) * e.L) }
+							if (e.Tip_VL == 22) { y += (Number(this.j.Price_standart.cable.Ch4_18) * e.L) }
+							if (e.Tip_VL == 23) { y += (Number(this.j.Price_standart.cable.Ch4_19) * e.L) }
 							
-							if (e.Tip_VL == 25) { y = (Number(this.j.Price_standart.cable.Ch4_20) * e.L) }
-							if (e.Tip_VL == 26) { y = (Number(this.j.Price_standart.cable.Ch4_21) * e.L) }
-							if (e.Tip_VL == 27) { y = (Number(this.j.Price_standart.cable.Ch4_22) * e.L) }
-							if (e.Tip_VL == 28) { y = (Number(this.j.Price_standart.cable.Ch4_23) * e.L) }
-							if (e.Tip_VL == 29) { y = (Number(this.j.Price_standart.cable.Ch4_24) * e.L) }
+							if (e.Tip_VL == 25) { y += (Number(this.j.Price_standart.cable.Ch4_20) * e.L) }
+							if (e.Tip_VL == 26) { y += (Number(this.j.Price_standart.cable.Ch4_21) * e.L) }
+							if (e.Tip_VL == 27) { y += (Number(this.j.Price_standart.cable.Ch4_22) * e.L) }
+							if (e.Tip_VL == 28) { y += (Number(this.j.Price_standart.cable.Ch4_23) * e.L) }
+							if (e.Tip_VL == 29) { y += (Number(this.j.Price_standart.cable.Ch4_24) * e.L) }
 							
-							if (e.Tip_VL == 31) { y = (Number(this.j.Price_standart.cable.Ch4_25) * e.L) }
-							if (e.Tip_VL == 32) { y = (Number(this.j.Price_standart.cable.Ch4_26) * e.L) }
-							if (e.Tip_VL == 33) { y = (Number(this.j.Price_standart.cable.Ch4_27) * e.L) }
-							if (e.Tip_VL == 34) { y = (Number(this.j.Price_standart.cable.Ch4_28) * e.L) }
-							if (e.Tip_VL == 36) { y = (Number(this.j.Price_standart.cable.Ch4_29) * e.L) }
+							if (e.Tip_VL == 31) { y += (Number(this.j.Price_standart.cable.Ch4_25) * e.L) }
+							if (e.Tip_VL == 32) { y += (Number(this.j.Price_standart.cable.Ch4_26) * e.L) }
+							if (e.Tip_VL == 33) { y += (Number(this.j.Price_standart.cable.Ch4_27) * e.L) }
+							if (e.Tip_VL == 34) { y += (Number(this.j.Price_standart.cable.Ch4_28) * e.L) }
+							if (e.Tip_VL == 36) { y += (Number(this.j.Price_standart.cable.Ch4_29) * e.L) }
 							console.log("one line=", y)
 
                         }
@@ -763,40 +771,40 @@ console.log("X", x)
                     this.Lines_two.forEach(function(e) {
                         if (e.L && e.L !== "0" && e.select !== "0" && this.Category == 2) {
                             //первый источник
-                            if (e.Tip_VL == 2) { y = (Number(this.j.Price_standart.cable.Ch4_1) * e.L) }
-							if (e.Tip_VL == 3) { y = (Number(this.j.Price_standart.cable.Ch4_2) * e.L) }
-							if (e.Tip_VL == 4) { y = (Number(this.j.Price_standart.cable.Ch4_3) * e.L) }
-							if (e.Tip_VL == 5) { y = (Number(this.j.Price_standart.cable.Ch4_4) * e.L) }
-							if (e.Tip_VL == 6) { y = (Number(this.j.Price_standart.cable.Ch4_5) * e.L) }
-							if (e.Tip_VL == 7) { y = (Number(this.j.Price_standart.cable.Ch4_6) * e.L) }
-							if (e.Tip_VL == 8) { y = (Number(this.j.Price_standart.cable.Ch4_7) * e.L) }
-							if (e.Tip_VL == 9) { y = (Number(this.j.Price_standart.cable.Ch4_8) * e.L) }
-							if (e.Tip_VL == 10) { y = (Number(this.j.Price_standart.cable.Ch4_9) * e.L) }
+                            if (e.Tip_VL == 2) { y += (Number(this.j.Price_standart.cable.Ch4_1) * e.L) }
+							if (e.Tip_VL == 3) { y += (Number(this.j.Price_standart.cable.Ch4_2) * e.L) }
+							if (e.Tip_VL == 4) { y += (Number(this.j.Price_standart.cable.Ch4_3) * e.L) }
+							if (e.Tip_VL == 5) { y += (Number(this.j.Price_standart.cable.Ch4_4) * e.L) }
+							if (e.Tip_VL == 6) { y += (Number(this.j.Price_standart.cable.Ch4_5) * e.L) }
+							if (e.Tip_VL == 7) { y += (Number(this.j.Price_standart.cable.Ch4_6) * e.L) }
+							if (e.Tip_VL == 8) { y += (Number(this.j.Price_standart.cable.Ch4_7) * e.L) }
+							if (e.Tip_VL == 9) { y += (Number(this.j.Price_standart.cable.Ch4_8) * e.L) }
+							if (e.Tip_VL == 10) { y += (Number(this.j.Price_standart.cable.Ch4_9) * e.L) }
 							
-							if (e.Tip_VL == 12) { y = (Number(this.j.Price_standart.cable.Ch4_10) * e.L) }
+							if (e.Tip_VL == 12) { y += (Number(this.j.Price_standart.cable.Ch4_10) * e.L) }
 							
-							if (e.Tip_VL == 14) { y = (Number(this.j.Price_standart.cable.Ch4_11) * e.L) }
-							if (e.Tip_VL == 15) { y = (Number(this.j.Price_standart.cable.Ch4_12) * e.L) }
-							if (e.Tip_VL == 16) { y = (Number(this.j.Price_standart.cable.Ch4_13) * e.L) }
-							if (e.Tip_VL == 17) { y = (Number(this.j.Price_standart.cable.Ch4_14) * e.L) }
-							if (e.Tip_VL == 18) { y = (Number(this.j.Price_standart.cable.Ch4_15) * e.L) }
-							if (e.Tip_VL == 19) { y = (Number(this.j.Price_standart.cable.Ch4_16) * e.L) }
-							if (e.Tip_VL == 20) { y = (Number(this.j.Price_standart.cable.Ch4_17) * e.L) }
+							if (e.Tip_VL == 14) { y += (Number(this.j.Price_standart.cable.Ch4_11) * e.L) }
+							if (e.Tip_VL == 15) { y += (Number(this.j.Price_standart.cable.Ch4_12) * e.L) }
+							if (e.Tip_VL == 16) { y += (Number(this.j.Price_standart.cable.Ch4_13) * e.L) }
+							if (e.Tip_VL == 17) { y += (Number(this.j.Price_standart.cable.Ch4_14) * e.L) }
+							if (e.Tip_VL == 18) { y += (Number(this.j.Price_standart.cable.Ch4_15) * e.L) }
+							if (e.Tip_VL == 19) { y += (Number(this.j.Price_standart.cable.Ch4_16) * e.L) }
+							if (e.Tip_VL == 20) { y += (Number(this.j.Price_standart.cable.Ch4_17) * e.L) }
 							
-							if (e.Tip_VL == 22) { y = (Number(this.j.Price_standart.cable.Ch4_18) * e.L) }
-							if (e.Tip_VL == 23) { y = (Number(this.j.Price_standart.cable.Ch4_19) * e.L) }
+							if (e.Tip_VL == 22) { y += (Number(this.j.Price_standart.cable.Ch4_18) * e.L) }
+							if (e.Tip_VL == 23) { y += (Number(this.j.Price_standart.cable.Ch4_19) * e.L) }
 							
-							if (e.Tip_VL == 25) { y = (Number(this.j.Price_standart.cable.Ch4_20) * e.L) }
-							if (e.Tip_VL == 26) { y = (Number(this.j.Price_standart.cable.Ch4_21) * e.L) }
-							if (e.Tip_VL == 27) { y = (Number(this.j.Price_standart.cable.Ch4_22) * e.L) }
-							if (e.Tip_VL == 28) { y = (Number(this.j.Price_standart.cable.Ch4_23) * e.L) }
-							if (e.Tip_VL == 29) { y = (Number(this.j.Price_standart.cable.Ch4_24) * e.L) }
+							if (e.Tip_VL == 25) { y += (Number(this.j.Price_standart.cable.Ch4_20) * e.L) }
+							if (e.Tip_VL == 26) { y += (Number(this.j.Price_standart.cable.Ch4_21) * e.L) }
+							if (e.Tip_VL == 27) { y += (Number(this.j.Price_standart.cable.Ch4_22) * e.L) }
+							if (e.Tip_VL == 28) { y += (Number(this.j.Price_standart.cable.Ch4_23) * e.L) }
+							if (e.Tip_VL == 29) { y += (Number(this.j.Price_standart.cable.Ch4_24) * e.L) }
 							
-							if (e.Tip_VL == 31) { y = (Number(this.j.Price_standart.cable.Ch4_25) * e.L) }
-							if (e.Tip_VL == 32) { y = (Number(this.j.Price_standart.cable.Ch4_26) * e.L) }
-							if (e.Tip_VL == 33) { y = (Number(this.j.Price_standart.cable.Ch4_27) * e.L) }
-							if (e.Tip_VL == 34) { y = (Number(this.j.Price_standart.cable.Ch4_28) * e.L) }
-							if (e.Tip_VL == 36) { y = (Number(this.j.Price_standart.cable.Ch4_29) * e.L) }
+							if (e.Tip_VL == 31) { y += (Number(this.j.Price_standart.cable.Ch4_25) * e.L) }
+							if (e.Tip_VL == 32) { y += (Number(this.j.Price_standart.cable.Ch4_26) * e.L) }
+							if (e.Tip_VL == 33) { y += (Number(this.j.Price_standart.cable.Ch4_27) * e.L) }
+							if (e.Tip_VL == 34) { y += (Number(this.j.Price_standart.cable.Ch4_28) * e.L) }
+							if (e.Tip_VL == 36) { y += (Number(this.j.Price_standart.cable.Ch4_29) * e.L) }
 							
                             console.log("two line=", y)
                         }
@@ -806,14 +814,14 @@ console.log("X", x)
                   if (this.BuildTP && this.Calculate !== 0 && this.VoltageClass !== 2) {
                  //        y += (Number(this.j.Standart[max][this["BuildTP_radio_" + this.Calculate]]) * N)
 					
-					if (this.BuildTP_radio_2 == "C4_1") { build_st = (Number(this.j.Price_standart.tp.TP_1) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
-					if (this.BuildTP_radio_2 == "C4_2") { build_st = (Number(this.j.Price_standart.tp.TP_2) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
-					if (this.BuildTP_radio_2 == "C4_3") { build_st = (Number(this.j.Price_standart.tp.TP_3) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
-					if (this.BuildTP_radio_2 == "C4_4") { build_st = (Number(this.j.Price_standart.tp.TP_8) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
-					if (this.BuildTP_radio_2 == "C4_8") { build_st = (Number(this.j.Price_standart.tp.TP_4) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
-					if (this.BuildTP_radio_2 == "C4_9") { build_st = (Number(this.j.Price_standart.tp.TP_5) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
-					if (this.BuildTP_radio_2 == "C4_10") { build_st = (Number(this.j.Price_standart.tp.TP_6) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
-					if (this.BuildTP_radio_2 == "C4_11") { build_st = (Number(this.j.Price_standart.tp.TP_7) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}	
+					if (this.BuildTP_radio_2 == "C4_1") { build_st = (Number(this.j.Price_standart.tp.TP_1) * N)}
+					if (this.BuildTP_radio_2 == "C4_2") { build_st = (Number(this.j.Price_standart.tp.TP_2) * N)}
+					if (this.BuildTP_radio_2 == "C4_3") { build_st = (Number(this.j.Price_standart.tp.TP_3) * N)}
+					if (this.BuildTP_radio_2 == "C4_4") { build_st = (Number(this.j.Price_standart.tp.TP_8) * N)}
+					if (this.BuildTP_radio_2 == "C4_8") { build_st = (Number(this.j.Price_standart.tp.TP_4) * N)}
+					if (this.BuildTP_radio_2 == "C4_9") { build_st = (Number(this.j.Price_standart.tp.TP_5) * N)}
+					if (this.BuildTP_radio_2 == "C4_10") { build_st = (Number(this.j.Price_standart.tp.TP_6) * N)}
+					if (this.BuildTP_radio_2 == "C4_11") { build_st = (Number(this.j.Price_standart.tp.TP_7) * N)}	
 
 
 						
