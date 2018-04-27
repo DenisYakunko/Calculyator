@@ -7,11 +7,13 @@ $.getJSON('data.json', function(json) {
     app.j = json
 });
 
+Vue.config.devtools = true
+
 var app = new Vue({
     el: '#calculate',
     data: {
         S1: 0, //вид заявки (1 - постоянное, 2 - временное)
-        Category: 0,
+        Category: "3",
         N: "", //заявленная мощность
         Conditions: false, //признак условия
         Build: false, //необходимо строительство
@@ -294,6 +296,7 @@ var app = new Vue({
                 var x = 0
 				var vr_pw = 0
 				var ps_pw = 0
+				var build_pw = 0
 				var rpunkt_pw = 0
                 var N = Number(this.N)
                 var max = "max150"
@@ -351,9 +354,10 @@ var app = new Vue({
                 //  this.Build == false
                 
 				
-				ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
-                console.log("постоянное_мощность_усл_до_15", ps_pw)
+					ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_15)
+					console.log("постоянное_мощность_усл_до_15", ps_pw)
 				
+					x = ps_pw
 				}
                 
 				//для постоянного присоединения от 15 до 150
@@ -362,8 +366,10 @@ var app = new Vue({
                 //  this.Build == false
                 
 				
-				ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_150)
-                console.log("постоянное_мощность_усл_от_15_до_150", ps_pw)
+					ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_do_150)
+					console.log("постоянное_мощность_усл_от_15_до_150", ps_pw)
+				
+					x = ps_pw
 				
 				}
                 
@@ -385,25 +391,25 @@ var app = new Vue({
                 if (this.Build && this.S1 !== 2) {
                     //для постоянного присоединения
                     // до 15
-                    if (N <= 15) {
-                        max = "max150"
-                        if (this.Conditions || this.Category !== 2) {
-                            if (this.VoltageClass == 1) {
-                                this.showCheckbox([21, 23, 31, 32, 311])
-                            }
-                            if (this.VoltageClass == 2) {
-                                this.showCheckbox([23, 32])
-                            }
+                //    if (N <= 15) {
+                //        max = "max150"
+                    //    if (this.Conditions || this.Category !== 2) {
+                    //        if (this.VoltageClass == 1) {
+                    //            this.showCheckbox([21, 23, 31, 32, 311])
+                    //        }
+                    //        if (this.VoltageClass == 2) {
+                    //            this.showCheckbox([23, 32])
+                //            }
 
                             //прячем строительство ТП если класс 6-10
                     //        if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
                     //        if (this.Category == 3) { this.showRadio([1]) }
                     //        if (this.Category == 2) { this.showRadio([9]) }
-                        } else {
-                            return 550
-                        }
-                    }
+                //        } else {
+                //            return 550
+                //        }
+                //    }
 
                     // от 16 до 150
                     if (N > 15 && N <= 150) {
@@ -430,6 +436,8 @@ var app = new Vue({
 
 						  if (this.Territory == 2) { this.showRadio([4]) }
 					      if (this.Territory == 1) { this.showRadio([1, 2, 3, 5, 6, 7, 8]) }
+						  
+						  
 						  
                     //    if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
                     //    if (this.Category == 2) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
@@ -524,14 +532,35 @@ var app = new Vue({
 
                     //строительство ТП
                     if (this.BuildTP && this.Calculate !== 0 && this.VoltageClass !== 2) {
-                        x += (Number(this.j.Power[max][this["BuildTP_radio_" + this.Calculate]]) * N)
+                    //    x += (Number(this.j.Power[max][this["BuildTP_radio_" + this.Calculate]]) * N)
+                        console.log("buildTP", x)						
+						
+						if (this.BuildTP_radio_2 == "C4_1") { build_pw = (Number(this.j.Price_power.tp.TP_1) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
+						if (this.BuildTP_radio_2 == "C4_2") { build_pw = (Number(this.j.Price_power.tp.TP_2) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
+						if (this.BuildTP_radio_2 == "C4_3") { build_pw = (Number(this.j.Price_power.tp.TP_3) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
+						if (this.BuildTP_radio_2 == "C4_4") { build_pw = (Number(this.j.Price_power.tp.TP_8) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
+						if (this.BuildTP_radio_2 == "C4_8") { build_pw = (Number(this.j.Price_power.tp.TP_4) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
+						if (this.BuildTP_radio_2 == "C4_9") { build_pw = (Number(this.j.Price_power.tp.TP_5) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
+						if (this.BuildTP_radio_2 == "C4_10") { build_pw = (Number(this.j.Price_power.tp.TP_6) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}
+						if (this.BuildTP_radio_2 == "C4_11") { build_pw = (Number(this.j.Price_power.tp.TP_7) + (N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)) )}	
+
+
+						
+						
+						x = build_pw
+
+						console.log("build_pw", build_pw)
+						
+						
                     }
 					
 					
 					//строительство Распределительного пункта
                     if (N > 999 && this.Rasp_punkt) {
                    
-					rpunkt_pw = (Number(this.j.Price_power.rp.RP))
+						rpunkt_pw = (Number(this.j.Price_power.rp.RP))
+					
+						x = x + rpunkt_pw
                         console.log("Распределительный пункт", rpunkt_pw)
                     }
 					
@@ -555,6 +584,7 @@ console.log("X", x)
 				var ps_st = 0
 				var ps_st_vyshe_150 = 0
 				var rpunkt_st = 0
+				var build_st = 0
                 var N = Number(this.N)
                 var max = "max150"
                 var cmax = "max15"
@@ -574,9 +604,9 @@ console.log("X", x)
                     this.Build == false
                 
 				
-				vr_st = Number(this.j.Price_standart.stavka_ps.C_1)
-                console.log("временное_стандарт_усл", vr_st)
-				y = vr_st
+					vr_st = Number(this.j.Price_standart.stavka_ps.C_1)
+					console.log("временное_стандарт_усл", vr_st)
+					y = vr_st
 				}
 
 				
@@ -586,8 +616,8 @@ console.log("X", x)
                 //  this.Build == false
                 
 				
-				ps_st = 550
-                console.log("постоянное_стандарт_безусл", ps_st)
+					ps_st = 550
+					console.log("постоянное_стандарт_безусл", ps_st)
 				
 				}
                 
@@ -597,12 +627,23 @@ console.log("X", x)
                 //  this.Build == false
                 
 				
-				ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
-                console.log("постоянное_стандарт_усл", ps_st)
+					ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
+					console.log("постоянное_стандарт_усл", ps_st)
+					y = ps_st
 				
 				}
                 
+				//для постоянного присоединения от 15 до 150
+                if (N > 15 && N <= 150 && this.S1 == 1) {
+                    this.Conditions == true
+                //  this.Build == false
+                
 				
+					ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
+					console.log("постоянное_стандарт_усл_от_15_до_150", ps_st)
+					y = ps_st
+				
+				}				
 				
 				
 				//для любого присоединения
@@ -641,12 +682,12 @@ console.log("X", x)
                     // от 16 до 150
                     if (N > 15 && N <= 150) {
                         max = "max150"
-                        if (this.VoltageClass == 1) {
-                            this.showCheckbox([21, 22, 23, 24, 31, 32, 311])
-                        }
-                        if (this.VoltageClass == 2) {
-                            this.showCheckbox([23, 24, 32])
-                        }
+                    //    if (this.VoltageClass == 1) {
+                    //        this.showCheckbox([21, 22, 23, 24, 31, 32, 311])
+                    //    }
+                    //    if (this.VoltageClass == 2) {
+                    //        this.showCheckbox([23, 24, 32])
+                    //    }
 
                         //прячем строительство ТП если класс 6-10
                         if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
@@ -762,18 +803,34 @@ console.log("X", x)
                     }, this);
 
                     //строительство ТП
-                    if (this.BuildTP && this.Calculate !== 0 && this.VoltageClass !== 2) {
-                        y += (Number(this.j.Standart[max][this["BuildTP_radio_" + this.Calculate]]) * N * Number(this.j.Z.TP))
-					 
-					// y = (Number(this.Price_standart.tp.TP_1))
+                  if (this.BuildTP && this.Calculate !== 0 && this.VoltageClass !== 2) {
+                 //        y += (Number(this.j.Standart[max][this["BuildTP_radio_" + this.Calculate]]) * N)
+					
+					if (this.BuildTP_radio_2 == "C4_1") { build_st = (Number(this.j.Price_standart.tp.TP_1) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
+					if (this.BuildTP_radio_2 == "C4_2") { build_st = (Number(this.j.Price_standart.tp.TP_2) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
+					if (this.BuildTP_radio_2 == "C4_3") { build_st = (Number(this.j.Price_standart.tp.TP_3) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
+					if (this.BuildTP_radio_2 == "C4_4") { build_st = (Number(this.j.Price_standart.tp.TP_8) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
+					if (this.BuildTP_radio_2 == "C4_8") { build_st = (Number(this.j.Price_standart.tp.TP_4) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
+					if (this.BuildTP_radio_2 == "C4_9") { build_st = (Number(this.j.Price_standart.tp.TP_5) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
+					if (this.BuildTP_radio_2 == "C4_10") { build_st = (Number(this.j.Price_standart.tp.TP_6) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}
+					if (this.BuildTP_radio_2 == "C4_11") { build_st = (Number(this.j.Price_standart.tp.TP_7) + (N * Number(this.j.Price_standart.stavka_ps.C_1)) )}	
+
+
+						
+						
+					    y = y + build_st
                         console.log("buildTP", y)
-                    }
+						console.log("build_st", build_st)
+                  }
 					
 					//строительство Распределительного пункта
                     if (N > 999 && this.Rasp_punkt) {
                    
-					rpunkt_st = (Number(this.j.Price_standart.rp.RP))
-                        console.log("Распределительный пункт", rpunkt_st)
+						rpunkt_st = (Number(this.j.Price_standart.rp.RP))
+                        y = y + Rasp_punkt
+						
+						console.log("Распределительный пункт", rpunkt_st)
+						
                     }
 					
                 }
