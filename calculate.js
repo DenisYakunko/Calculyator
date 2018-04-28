@@ -373,6 +373,19 @@ var app = new Vue({
 				
 				}
                 
+				//для постоянного присоединения свыше 150 без строительства
+                if (N > 150 && this.S1 == 1) {
+                    this.Conditions == true
+                //  this.Build == false
+                
+				
+					ps_pw = N * Number(this.j.Price_power.stavka_ps.C_1_vyshe_150)
+					console.log("постоянное_мощность_усл_от_15_до_150", ps_pw)
+				
+					x = ps_pw
+				
+				}
+                
 			
 			
 
@@ -645,7 +658,20 @@ console.log("X", x)
 					y = ps_st
 				
 				}				
+
+				//для постоянного присоединения выше 150 безстроительства
+                if (N > 150 && this.S1 == 1) {
+                    this.Conditions == true
+                //  this.Build == false
+                
 				
+					ps_st = Number(this.j.Price_standart.stavka_ps.C_1)
+					console.log("постоянное_стандарт_усл_от_15_до_150", ps_st)
+					y = ps_st
+				
+				}				
+				
+							
 				
 				//для любого присоединения
             //    if (N > 15) {
