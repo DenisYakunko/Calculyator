@@ -564,7 +564,7 @@ var app = new Vue({
 
 						
 						
-						x = build_pw
+						x = x + build_pw
 
 						console.log("build_pw", build_pw)
 						
