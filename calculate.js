@@ -865,7 +865,7 @@ console.log("X", x)
                     if (N > 999 && this.Rasp_punkt) {
                    
 						rpunkt_st = (Number(this.j.Price_standart.rp.RP))
-                        y = y + Rasp_punkt
+                        y = y + rpunkt_st
 						
 						console.log("Распределительный пункт", rpunkt_st)
 						
