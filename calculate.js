@@ -444,7 +444,11 @@ var app = new Vue({
                     if (N > 150) {
                     //    max = "min150"
    
-                        //прячем строительство ТП если класс 6-10
+                        
+						x = (Number(this.j.Price_power.stavka_ps.C_1_vyshe_150) * N) 
+						
+						
+						//прячем строительство ТП если класс 6-10
                           if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
 
 						  if (this.Territory == 2) { this.showRadio([4]) }
@@ -461,7 +465,7 @@ var app = new Vue({
                         if (e.L && e.L !== "0" && e.select !== "0") {
                                                        
 							//расчета для 1-й линии (пока просто выводит значение не складывая надо y +=)
-                            if (e.Tip_VL == 2) { x += (Number(this.j.Price_power.cable.Ch4_1)) }
+                            if (e.Tip_VL == 2) { x += (Number(this.j.Price_power.cable.Ch4_1) * N) }
 							if (e.Tip_VL == 3) { x += (Number(this.j.Price_power.cable.Ch4_2)) }
 							if (e.Tip_VL == 4) { x += (Number(this.j.Price_power.cable.Ch4_3)) }
 							if (e.Tip_VL == 5) { x += (Number(this.j.Price_power.cable.Ch4_4)) }
@@ -571,7 +575,7 @@ var app = new Vue({
 					//строительство Распределительного пункта
                     if (N > 999 && this.Rasp_punkt) {
                    
-						rpunkt_pw = (Number(this.j.Price_power.rp.RP))
+						rpunkt_pw = (Number(this.j.Price_power.rp.RP) * N)
 					
 						x = x + rpunkt_pw
                         console.log("Распределительный пункт", rpunkt_pw)
