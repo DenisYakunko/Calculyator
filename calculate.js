@@ -446,7 +446,7 @@ var app = new Vue({
    
                         
 						x = (Number(this.j.Price_power.stavka_ps.C_1_vyshe_150) * N) 
-						
+						console.log("постоянное_мощность_усл_свыше_150", x)
 						
 						//прячем строительство ТП если класс 6-10
                           if (this.VoltageClass == 2) { this.Show_BuildTP = false } else { this.Show_BuildTP = true }
@@ -462,7 +462,7 @@ var app = new Vue({
 
                     ///////////////////////////// РАСЧЕТ Линий по МЩНОСТИ
                     this.Lines_one.forEach(function(e) {
-                        if (e.L && e.L !== "0" && e.select !== "0") {
+                        if (e.select !== "0") {
                                                        
 							//расчета для 1-й линии (пока просто выводит значение не складывая надо y +=)
                             if (e.Tip_VL == 2) { x += (Number(this.j.Price_power.cable.Ch4_1) * N) }
@@ -505,7 +505,7 @@ var app = new Vue({
                     }, this);
 
                     this.Lines_two.forEach(function(e) {
-                        if (e.L && e.L !== "0" && e.select !== "0" && this.Category == 2) {
+                        if (e.select !== "0" && this.Category == 2) {
                             //первый источник
                             if (e.Tip_VL == 2) { x += (Number(this.j.Price_power.cable.Ch4_1) * N) }
 							if (e.Tip_VL == 3) { x += (Number(this.j.Price_power.cable.Ch4_2) * N) }
