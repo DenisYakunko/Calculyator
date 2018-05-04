@@ -149,14 +149,14 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     <div class="select">
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите тип линии</option>
-                            <option value="1" v-if="Show_Ch2_1"  v-show="VoltageClass == 1" >Воздушная линия 0,4кВ</option>
-                            <option value="2" v-if="Show_Ch2_2"  v-show="VoltageClass == 1" >Воздушная линия изолированная 0,4кВ</option>
-                            <option value="3" v-if="Show_Ch2_3"  v-show="VoltageClass == 2" >Воздушная линия 6-10кВ</option>
-                            <option value="4" v-if="Show_Ch2_4"  v-show="VoltageClass == 2" >Воздушная линия изолированная 6-10кВ</option>
-                            <option value="5" v-if="Show_Ch3_1"  v-show="VoltageClass == 1" >Кабельная линия 0,4кВ</option>
-                            <option value="6" v-if="Show_Ch3_2"  v-show="VoltageClass == 2" >Кабельная линия 6-10кВ</option>
-                            <option value="7" v-if="Show_Ch3_1_1"  v-show="VoltageClass == 1" >Кабельная линия 0,4кВ с применением ГНБ*</option>
-                            <option value="8" v-if="Show_Ch3_2_1"  v-show="VoltageClass == 2" >Кабельная линия 6-10кВ с применением ГНБ*</option>
+<!--                        <option value="1" v-if="Show_Ch2_1"  v-show="VoltageClass == 1 && Territory == 1" >Воздушная линия 0,4кВ</option> -->
+                            <option value="2" v-if="Show_Ch2_2"  v-show="VoltageClass == 1 && Territory == 1" >Воздушная линия изолированная 0,4кВ</option>
+                            <option value="3" v-if="Show_Ch2_3"  v-show="VoltageClass == 2 && Territory == 1" >Воздушная линия 6-10кВ</option>
+                            <option value="4" v-if="Show_Ch2_4"  v-show="VoltageClass == 2 && Territory == 2" >Воздушная линия изолированная 6-10кВ</option>
+                            <option value="5" v-if="Show_Ch3_1"  v-show="VoltageClass == 1 && Territory == 1" >Кабельная линия 0,4кВ</option>
+                            <option value="6" v-if="Show_Ch3_2"  v-show="VoltageClass == 2 && Territory == 1" >Кабельная линия 6-10кВ</option>
+                            <option value="7" v-if="Show_Ch3_1_1"  v-show="VoltageClass == 1 && Territory == 1" >Кабельная линия 0,4кВ с применением ГНБ*</option>
+                            <option value="8" v-if="Show_Ch3_2_1"  v-show="VoltageClass == 2 && Territory == 1" >Кабельная линия 6-10кВ с применением ГНБ*</option>
                         </select>
                     </div>
 <!-- выбор матриалов изоляции для Линии 1 - не долделана!!!  скорирована с Выбора типа линии -->					
@@ -237,14 +237,14 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     <div class="select">
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'two')">
                             <option value="0" disabled selected> Выберите тип линии</option>
-                            <option value="1" v-if="Show_Ch2_1"  v-show="VoltageClass == 1" >Воздушная линия 0,4кВ</option>
-                            <option value="2" v-if="Show_Ch2_2"  v-show="VoltageClass == 1" >Воздушная линия изолированная 0,4кВ</option>
-                            <option value="3" v-if="Show_Ch2_3"  v-show="VoltageClass == 2" >Воздушная линия 6-10кВ</option>
-                            <option value="4" v-if="Show_Ch2_4"  v-show="VoltageClass == 2" >Воздушная линия изолированная 6-10кВ</option>
-                            <option value="5" v-if="Show_Ch3_1"  v-show="VoltageClass == 1" >Кабельная линия 0,4кВ</option>
-                            <option value="6" v-if="Show_Ch3_2"  v-show="VoltageClass == 2" >Кабельная линия 6-10кВ</option>
-                            <option value="7" v-if="Show_Ch3_1_1"  v-show="VoltageClass == 1" >Кабельная линия 0,4кВ с применением ГНБ*</option>
-                            <option value="8" v-if="Show_Ch3_2_1"  v-show="VoltageClass == 2" >Кабельная линия 6-10кВ с применением ГНБ*</option>
+<!--                        <option value="1" v-if="Show_Ch2_1"  v-show="VoltageClass == 1 && Territory == 1" >Воздушная линия 0,4кВ</option> -->
+                            <option value="2" v-if="Show_Ch2_2"  v-show="VoltageClass == 1 && Territory == 1" >Воздушная линия изолированная 0,4кВ</option>
+                            <option value="3" v-if="Show_Ch2_3"  v-show="VoltageClass == 2 && Territory == 1" >Воздушная линия 6-10кВ</option>
+                            <option value="4" v-if="Show_Ch2_4"  v-show="VoltageClass == 2 && Territory == 2" >Воздушная линия изолированная 6-10кВ</option>
+                            <option value="5" v-if="Show_Ch3_1"  v-show="VoltageClass == 1 && Territory == 1" >Кабельная линия 0,4кВ</option>
+                            <option value="6" v-if="Show_Ch3_2"  v-show="VoltageClass == 2 && Territory == 1" >Кабельная линия 6-10кВ</option>
+                            <option value="7" v-if="Show_Ch3_1_1"  v-show="VoltageClass == 1 && Territory == 1" >Кабельная линия 0,4кВ с применением ГНБ*</option>
+                            <option value="8" v-if="Show_Ch3_2_1"  v-show="VoltageClass == 2 && Territory == 1" >Кабельная линия 6-10кВ с применением ГНБ*</option>
                         </select>
                     </div>
 					
@@ -331,14 +331,14 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     <div class="select">
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'one')">
                             <option value="0" disabled selected> Выберите тип линии</option>
-                            <option value="1" v-if="Show_Ch2_1"  v-show="VoltageClass == 1" >Воздушная линия 0,4кВ</option>
-                            <option value="2" v-if="Show_Ch2_2"  v-show="VoltageClass == 1" >Воздушная линия изолированная 0,4кВ</option>
-                            <option value="3" v-if="Show_Ch2_3"  v-show="VoltageClass == 2" >Воздушная линия 6-10кВ</option>
-                            <option value="4" v-if="Show_Ch2_4"  v-show="VoltageClass == 2" >Воздушная линия изолированная 6-10кВ</option>
-                            <option value="5" v-if="Show_Ch3_1"  v-show="VoltageClass == 1" >Кабельная линия 0,4кВ</option>
-                            <option value="6" v-if="Show_Ch3_2"  v-show="VoltageClass == 2" >Кабельная линия 6-10кВ</option>
-                            <option value="7" v-if="Show_Ch3_1_1"  v-show="VoltageClass == 1" >Кабельная линия 0,4кВ с применением ГНБ*</option>
-                            <option value="8" v-if="Show_Ch3_2_1"  v-show="VoltageClass == 2" >Кабельная линия 6-10кВ с применением ГНБ*</option>
+<!--                        <option value="1" v-if="Show_Ch2_1"  v-show="VoltageClass == 1 && Territory == 1" >Воздушная линия 0,4кВ</option> -->
+                            <option value="2" v-if="Show_Ch2_2"  v-show="VoltageClass == 1 && Territory == 1" >Воздушная линия изолированная 0,4кВ</option>
+                            <option value="3" v-if="Show_Ch2_3"  v-show="VoltageClass == 2 && Territory == 1" >Воздушная линия 6-10кВ</option>
+                            <option value="4" v-if="Show_Ch2_4"  v-show="VoltageClass == 2 && Territory == 2" >Воздушная линия изолированная 6-10кВ</option>
+                            <option value="5" v-if="Show_Ch3_1"  v-show="VoltageClass == 1 && Territory == 1" >Кабельная линия 0,4кВ</option>
+                            <option value="6" v-if="Show_Ch3_2"  v-show="VoltageClass == 2 && Territory == 1" >Кабельная линия 6-10кВ</option>
+                            <option value="7" v-if="Show_Ch3_1_1"  v-show="VoltageClass == 1 && Territory == 1" >Кабельная линия 0,4кВ с применением ГНБ*</option>
+                            <option value="8" v-if="Show_Ch3_2_1"  v-show="VoltageClass == 2 && Territory == 1" >Кабельная линия 6-10кВ с применением ГНБ*</option>
                         </select>
                     </div>
 <!-- выбор матриалов изоляции для Линии 1 - не долделана!!!  скопирована с Выбора типа линии -->					
@@ -421,14 +421,14 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                     <div class="select">
                         <select class="no_styled" v-model="item.select" v-on:change="index(item, 'two')">
                             <option value="0" disabled selected> Выберите тип линии</option>
-                            <option value="1" v-if="Show_Ch2_1"  v-show="VoltageClass == 1" >Воздушная линия 0,4кВ</option>
-                            <option value="2" v-if="Show_Ch2_2"  v-show="VoltageClass == 1" >Воздушная линия изолированная 0,4кВ</option>
-                            <option value="3" v-if="Show_Ch2_3"  v-show="VoltageClass == 2" >Воздушная линия 6-10кВ</option>
-                            <option value="4" v-if="Show_Ch2_4"  v-show="VoltageClass == 2" >Воздушная линия изолированная 6-10кВ</option>
-                            <option value="5" v-if="Show_Ch3_1"  v-show="VoltageClass == 1" >Кабельная линия 0,4кВ</option>
-                            <option value="6" v-if="Show_Ch3_2"  v-show="VoltageClass == 2" >Кабельная линия 6-10кВ</option>
-                            <option value="7" v-if="Show_Ch3_1_1"  v-show="VoltageClass == 1" >Кабельная линия 0,4кВ с применением ГНБ*</option>
-                            <option value="8" v-if="Show_Ch3_2_1"  v-show="VoltageClass == 2" >Кабельная линия 6-10кВ с применением ГНБ*</option>
+<!--                        <option value="1" v-if="Show_Ch2_1"  v-show="VoltageClass == 1 && Territory == 1" >Воздушная линия 0,4кВ</option> -->
+                            <option value="2" v-if="Show_Ch2_2"  v-show="VoltageClass == 1 && Territory == 1" >Воздушная линия изолированная 0,4кВ</option>
+                            <option value="3" v-if="Show_Ch2_3"  v-show="VoltageClass == 2 && Territory == 1" >Воздушная линия 6-10кВ</option>
+                            <option value="4" v-if="Show_Ch2_4"  v-show="VoltageClass == 2 && Territory == 2" >Воздушная линия изолированная 6-10кВ</option>
+                            <option value="5" v-if="Show_Ch3_1"  v-show="VoltageClass == 1 && Territory == 1" >Кабельная линия 0,4кВ</option>
+                            <option value="6" v-if="Show_Ch3_2"  v-show="VoltageClass == 2 && Territory == 1" >Кабельная линия 6-10кВ</option>
+                            <option value="7" v-if="Show_Ch3_1_1"  v-show="VoltageClass == 1 && Territory == 1" >Кабельная линия 0,4кВ с применением ГНБ*</option>
+                            <option value="8" v-if="Show_Ch3_2_1"  v-show="VoltageClass == 2 && Territory == 1" >Кабельная линия 6-10кВ с применением ГНБ*</option>
                         </select>
                     </div>
 					
@@ -591,7 +591,7 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
                         <label>
                             <input type="radio" class="BuildTP_radio_2" name="BuildTP_radio_2"
                                                      v-show="radio5" value="C4_8" v-model="BuildTP_radio_2"
-                                                     :disabled="!BuildTP"> от 100 до 250 кВА включительно 
+                                                     :disabled="!BuildTP"> от 100 до 250 кВА включительно
                         </label>
                     </p>
                     <p v-show="radio6">
