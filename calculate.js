@@ -184,9 +184,13 @@ var app = new Vue({
             if (N < 0 || !N) {
                 this.N = null
             }
+			
+
+			
         },
         S1: function() {
             this.resetAllBuilds()
+			
         },
         VoltageClass: function() {
             this.resetAllBuilds()
@@ -289,6 +293,9 @@ var app = new Vue({
             }
         }
     },
+	
+
+	
     computed: {
         //Расчет по мощности
         resultPw: function() {
@@ -304,7 +311,7 @@ var app = new Vue({
 
                 //меньше 15 без строительства
                 if (N <= 15 && !this.Conditions && N) {
-                    if (this.Category == 3 || this.Category == 0){
+                    if (this.Category == 3 && this.S1 !== 0|| this.Category == 0){  //добавлено && this.S1 !== 0
                         return 550
                     }
                 }
@@ -454,6 +461,8 @@ var app = new Vue({
 						  if (this.Territory == 2) { this.showRadio([4]) }
 					      if (this.Territory == 1) { this.showRadio([1, 2, 3, 5, 6, 7, 8]) }
 						  
+						  if (this.VoltageClass == 2 && this.Build) {this.Lines_one.Tip_VL == 0}
+						  console.log("Переменная this ", this)
 						  
 						  
                     //    if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
@@ -462,6 +471,9 @@ var app = new Vue({
 
                     ///////////////////////////// РАСЧЕТ Линий по МЩНОСТИ
                     this.Lines_one.forEach(function(e) {
+						
+
+						
                         if (e.select !== "0") {
                                                        
 							//расчета для 1-й линии (пока просто выводит значение не складывая надо y +=)
@@ -611,7 +623,7 @@ console.log("X", x)
 
                 //меньше 15 без строительства
                 if (N <= 15 && !this.Conditions && N && this.Category !== 2) {
-                    if (this.Category == 3 || this.Category == 0){
+                    if (this.Category == 3 && this.S1 !== 0|| this.Category == 0){
                         return 550
                     }
                 }
