@@ -595,8 +595,10 @@ var app = new Vue({
 					
                 }
 console.log("X", x)
-                //если переключились на стандартизированную ставку то обнуляем мощность
+                //если переключились на стандартизированную ставку то обнуляем мощность                        Lines_one[item.id].select 
                 if (this.Calculate == 2 && this.Build) { return 0 }
+				
+				if (this.VoltageClass == 2 && this.Build) { this.Lines_one[{"id":0,"select":"0","index":"0","Tip_VL":"0","L":""}] }
 
                 //выводим результат
                 return this.result(x)
