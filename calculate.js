@@ -461,9 +461,7 @@ var app = new Vue({
 						  if (this.Territory == 2) { this.showRadio([4]) }
 					      if (this.Territory == 1) { this.showRadio([1, 2, 3, 5, 6, 7, 8]) }
 						  
-						  if (this.VoltageClass == 2 && this.Build) {this.Lines_one.Tip_VL == 0}
-						  console.log("Переменная this ", this)
-						  
+
 						  
                     //    if (this.Category == 3) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
                     //    if (this.Category == 2) { this.showRadio([1, 2, 3, 4, 5, 6, 7, 8]) }
@@ -595,10 +593,11 @@ var app = new Vue({
 					
                 }
 console.log("X", x)
-                //если переключились на стандартизированную ставку то обнуляем мощность                        Lines_one[item.id].select 
+                //если переключились на стандартизированную ставку то обнуляем мощность                        Lines_one[item.id].select // Lines_one[{"id":0,"select":"0","index":"0","Tip_VL":"0","L":""}] 
                 if (this.Calculate == 2 && this.Build) { return 0 }
 				
-				if (this.VoltageClass == 2 && this.Build) { this.Lines_one[{"id":0,"select":"0","index":"0","Tip_VL":"0","L":""}] }
+				//если переключились на Класс напряжения 6(10) кВ, то обнуляем параметры
+				if (this.VoltageClass == 2 && this.Build) { this.Lines_one[0].select = 0, this.Lines_one[0].Tip_VL = 0 }
 
                 //выводим результат
                 return this.result(x)
