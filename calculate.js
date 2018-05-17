@@ -291,7 +291,14 @@ var app = new Vue({
                     this["Lines_" + lineNumber][e.id].index = this.j.Z.KL
                 }
             }
-        }
+        },
+		
+		ResetVoltage: function() {
+            
+			this.Lines_one[0].select = 0, this.Lines_one[0].Tip_VL = 0
+			this.result()
+            }
+		
     },
 	
 
@@ -597,7 +604,7 @@ console.log("X", x)
                 if (this.Calculate == 2 && this.Build) { return 0 }
 				
 				//если переключились на Класс напряжения 6(10) кВ, то обнуляем параметры
-				if (this.VoltageClass == 2 && this.Build) { this.Lines_one[0].select = 0, this.Lines_one[0].Tip_VL = 0 }
+				if (this.VoltageClass == 2 && this.Build) { this.ResetVoltage() }
 
                 //выводим результат
                 return this.result(x)
