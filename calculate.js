@@ -196,6 +196,11 @@ var app = new Vue({
             this.resetAllBuilds()
             this.ResetVoltage()
         },
+		
+		Territory: function() {
+            this.ResetVoltage()
+        },
+		
         Calculate: function() {
             this.resetAllBuilds()
         }
