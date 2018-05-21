@@ -278,18 +278,33 @@ var app = new Vue({
             this.Lines_one[0].Tip_VL = 0
 			this.Lines_one[0].L = 0
 			
+			this.Lines_two[0].select = 0, 
+            this.Lines_two[0].Tip_VL = 0
+			this.Lines_two[0].L = 0
+			
 			this.Lines_one[1].select = 0, 
             this.Lines_one[1].Tip_VL = 0
 			this.Lines_one[1].L = 0
+			
+     		this.Lines_two[1].select = 0, 
+            this.Lines_two[1].Tip_VL = 0
+			this.Lines_two[1].L = 0
 			
 			this.Lines_one[2].select = 0, 
             this.Lines_one[2].Tip_VL = 0
 			this.Lines_one[2].L = 0
 			
+     		this.Lines_two[2].select = 0, 
+            this.Lines_two[2].Tip_VL = 0
+			this.Lines_two[2].L = 0
+			
 			this.Lines_one[3].select = 0, 
             this.Lines_one[3].Tip_VL = 0
 			this.Lines_one[3].L = 0
-			
+		
+			this.Lines_two[3].select = 0, 
+            this.Lines_two[3].Tip_VL = 0
+			this.Lines_two[3].L = 0
 			this.result()
             }
 		
