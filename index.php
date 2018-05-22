@@ -167,10 +167,10 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="3" v-if="Show_Ch4_2" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="4" v-if="Show_Ch4_3" v-show="Territory == 1 && item.select == 2" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && item.select == 4" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
-							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && item.select == 4" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && item.select == 4" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && item.select == 4" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && item.select == 3" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
+							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && item.select == 3" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && item.select == 3" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && item.select == 3" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
 							<option value="9" v-if="Show_Ch4_8" v-show="Territory == 2 && item.select == 4" >- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="10" v-if="Show_Ch4_9" v-show="Territory == 2 && item.select == 4" >- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="11" disabled selected>не изолированным проводом:</option>
@@ -255,10 +255,10 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="3" v-if="Show_Ch4_2" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="4" v-if="Show_Ch4_3" v-show="Territory == 1 && item.select == 2" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && item.select == 4" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
-							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && item.select == 4" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && item.select == 4" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && item.select == 4" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && item.select == 3" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
+							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && item.select == 3" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && item.select == 3" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && item.select == 3" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
 							<option value="9" v-if="Show_Ch4_8" v-show="Territory == 2 && item.select == 4" >- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="10" v-if="Show_Ch4_9" v-show="Territory == 2 && item.select == 4" >- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="11" disabled selected>не изолированным проводом:</option>
@@ -351,10 +351,10 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="3" v-if="Show_Ch4_2" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="4" v-if="Show_Ch4_3" v-show="Territory == 1 && item.select == 2" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && item.select == 4" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
-							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && item.select == 4" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && item.select == 4" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && item.select == 4" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && item.select == 3" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
+							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && item.select == 3" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && item.select == 3" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && item.select == 3" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
 							<option value="9" v-if="Show_Ch4_8" v-show="Territory == 2 && item.select == 4" >- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="10" v-if="Show_Ch4_9" v-show="Territory == 2 && item.select == 4" >- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="11" disabled selected>не изолированным проводом:</option>
@@ -439,10 +439,10 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 							<option value="2" v-if="Show_Ch4_1" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="3" v-if="Show_Ch4_2" v-show="Territory == 1 && item.select == 2" >- сталеалюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
 							<option value="4" v-if="Show_Ch4_3" v-show="Territory == 1 && item.select == 2" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 0,4 изолированный -->
-							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && item.select == 4" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
-							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && item.select == 4" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && item.select == 4" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
-							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && item.select == 4" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="5" v-if="Show_Ch4_4" v-show="Territory == 1 && item.select == 3" >- сталеалюминевый до 50 мм2 включительно</option> <!-- Город, 6-10 изолированный -->
+							<option value="6" v-if="Show_Ch4_5" v-show="Territory == 1 && item.select == 3" >- сталеалюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="7" v-if="Show_Ch4_6" v-show="Territory == 1 && item.select == 3" >- алюминевый от 50 до 100 мм2</option> <!-- Город, 6-10 изолированный -->
+							<option value="8" v-if="Show_Ch4_7" v-show="Territory == 1 && item.select == 3" >- алюминевый от 100 до 200 мм2</option> <!-- Город, 6-10 изолированный -->
 							<option value="9" v-if="Show_Ch4_8" v-show="Territory == 2 && item.select == 4" >- сталеалюминевый до 50 мм2 включительно</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="10" v-if="Show_Ch4_9" v-show="Territory == 2 && item.select == 4" >- алюминевый от 50 до 100 мм2</option> <!-- НЕ Город, 6-10 изолированный -->
 							<option value="11" disabled selected>не изолированным проводом:</option>
