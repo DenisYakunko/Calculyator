@@ -497,8 +497,8 @@ $APPLICATION->SetTitle("Калькулятор стоимости техноло
 	
 	<!-- Пункт секционирования, не работает, скопирован с "Необходимо строителство" (Section) Появляется при выборе Мощности N=>1000-->
     <div id="third">
-<!--		<div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>999 || S1 == 1 && N<=999 && Category==2">   Было раньше-->
-		<div id="build" v-show="N>999"> <!--  Поправлено-->
+<!--		<div id="build" v-show="Conditions && S1 == 1 || S1 == 1 && N>999 || S1 == 1 && N<=999 && Category==2">  VoltageClass Было раньше-->
+		<div id="build" v-show="N>999 && VoltageClass == 2"> <!--  Поправлено-->
             
  			<div class="check">
                 <p>
